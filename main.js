@@ -316,3 +316,4 @@ console.log(Math.trunc(99.5));       // Es6
 let theName = "ali";
 let theLIst = [1, 2, 3, 4, 5];
 
+
