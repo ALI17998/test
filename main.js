@@ -232,5 +232,15 @@ console.log(-d + ++g * ++e + ++f);  //173
 // console.log(++age + ++age - --age + true);  //13
 // console.log(--age - true -true );  //8
 
-
+/*
+console.log(1000000);
 console.log(1_000_000);
+console.log(1e6);
+console.log(10 ** 6);
+console.log(100.0);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(Number.MAX_VALUE);
+console.log(Number.MAX_VALUE + 1000000);
+*/
+
+
