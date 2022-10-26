@@ -312,8 +312,63 @@ console.log(Math.trunc(99.5));       // Es6
 
 // console.log(Math.floor(Math.random() * 5));
 
-
-let theName = "ali";
+/*
+let theName = "ALI";
 let theLIst = [1, 2, 3, 4, 5];
 
+console.log(theName[1]);
+console.log(theName.charAt(0));
+console.log(theName.length);
+console.log(theName.toLowerCase());
 
+let Name = "  ahmed  ";
+
+console.log(Name.trim());
+console.log(Name.toUpperCase());
+
+let a = "  ali  ";
+
+console.log(a.trim().charAt(1).toUpperCase());
+*/
+
+/*
+let b = "ali web school";
+
+console.log(b.indexOf("web"));
+console.log(b.indexOf("web", 5));
+
+console.log(b.lastIndexOf("o"));
+
+console.log(b.slice(0, 6)); //! don't include the end
+console.log(b.slice(-4, -1)); //! don't include the end
+
+console.log(b.repeat(5));
+
+console.log(b.split(" ", 2))
+*/
+
+/*
+
+let a = "ali web school";
+
+console.log(a.substring(1, 5));
+console.log(a.substring(5, 1));
+console.log(a.substring(-10));      // start form 0
+console.log(a.substring(a.length - 5 , a.length - 3));
+
+console.log(a.substr(0, 5));
+console.log(a.substr(20));
+console.log(a.substr(-3, 4));
+
+console.log(a.includes("web"));
+console.log(a.includes("web", 8));
+
+console.log(a.startsWith("a"));
+console.log(a.startsWith("a", 3));
+console.log(a.startsWith("i",2));
+
+console.log(a.endsWith("a"));
+console.log(a.endsWith("b",7 ));
+console.log(a.endsWith("eb",7));
+
+*/
