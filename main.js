@@ -243,4 +243,76 @@ console.log(Number.MAX_VALUE);
 console.log(Number.MAX_VALUE + 1000000);
 */
 
+/*
+console.log((100).toString());
+console.log(100..toString());
+console.log(20.555555.toFixed(3));
+console.log(parseInt("100"));
+console.log(parseInt("100.5"));
+console.log(parseFloat("100.5"));
+console.log(Number.isInteger("100"));
+console.log(Number.isInteger(10.5));
+console.log(Number.isInteger(100));
+console.log(Number.isNaN("ali"));
+console.log(Number.isNaN("ali" / 10));
+*/
+
+/*
+console.log(Math.round(99.2));
+console.log(Math.round(99.5));
+
+console.log(Math.ceil(99.2));
+console.log(Math.floor(99.7));
+
+console.log(Math.min(10, 20, 30));
+console.log(Math.max(20, 50, 90));
+
+console.log(Math.pow(2, 3));
+
+console.log(Math.random());  // random number
+
+console.log(Math.trunc(99.5));       // Es6
+*/
+
+// let a = 1_00;
+// let b = 2_00.5;
+// let c = 1e2;
+// let d =2.4;
+
+// console.log(Math.trunc(Math.min(a,b,c,d)));
+
+// console.log(Math.pow(a, Math.floor(d)));  // 10000
+
+// console.log(Math.round(d));
+// console.log(Math.trunc(d));
+// console.log(Math.floor(d));
+// console.log(parseInt(d));
+
+// console.log((Math.floor(b) / Math.ceil(d)).toFixed(2));  // 66.67
+// console.log(Math.trunc(Math.floor(b) / Math.ceil(d)));  // 67
+
+// console.log(Math.trunc(100.56789));
+// console.log(parseInt(100.56789.toFixed(2)));
+
+// let flt = 10.4;
+// console.log(parseInt(flt));
+// console.log(Math.round(flt));
+// console.log(Math.trunc(flt));
+// console.log(Math.floor(flt));
+// console.log(flt.toFixed(0));
+
+// console.log(
+//   Math.ceil(Number.MAX_SAFE_INTEGER / --Number.MAX_SAFE_INTEGER) **
+//     (Math.ceil(Number.MAX_SAFE_INTEGER / --Number.MAX_SAFE_INTEGER) **
+//       Math.ceil(Number.MAX_SAFE_INTEGER / --Number.MAX_SAFE_INTEGER))
+// );
+
+// let num = 10;
+// console.log(+Number.isInteger(num) + +Number.isInteger(num));
+
+// console.log(Math.floor(Math.random() * 5));
+
+
+let theName = "ali";
+let theLIst = [1, 2, 3, 4, 5];
 
