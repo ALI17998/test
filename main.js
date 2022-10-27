@@ -398,6 +398,7 @@ console.log(word.endsWith(letterO.toLowerCase()));
 
 */
 
+/*
 let a = "Elzero Web School";
 
 console.log( a.charAt(2).toUpperCase() + a.slice(3,6));
@@ -412,5 +413,62 @@ console.log(a.split(" ",1));
 console.log(`${a.substr(0,6)} ${a.substr(-6,6)}`);
 
 
-console.log();
+console.log(`${a.charAt(0).toLowerCase()}${a.substr(1,(a.length - 2 )).toUpperCase()}${a.charAt(a.length - 1).toLowerCase()}`);
+console.log(`${a.charAt(0).toLowerCase()}${a.slice(1 , length - 1).toUpperCase()}${a.substr(-1).toLowerCase()}`); 
+*/
+
+/*
+console.log(10 == "10")  //! compare value only 
+console.log(10 != "10")  //! compare value only 
+
+console.log(10 === "10")  //! compare value & type
+console.log(10 !== 10 )  //! compare value & type
+
+console.log(10 < 10);
+console.log(10 <= 10);
+console.log(10 > 10);
+console.log(10 >= 10);
+
+//! console.log(typeof"ali" === typeof"ahmed")
+
+console.log(!(10 == "10"));          // not >> !
+console.log(10 == "10" && 10 > 8);   // and >> &&
+console.log(10 == 3 || 10 == 5);     // or  >> ||
+
+*/
+/*
+console.log(100 == "100"); // true
+console.log(100 != 1000); // true
+console.log(110 > 100 && 10 < 20); // true
+console.log(-10 == "-10"); // true
+console.log(! -50 >= +"-40"); // true
+console.log(! 10 <= -"-40"); // true
+console.log(! "10" != 10); // true
+console.log(! 20 == false); // true
+*/
+
+
+/*
+let a = 10;
+let b = 20;
+
+console.log(a != b); // true
+console.log(! (a == b) ); // true
+console.log(a < b); // true
+console.log(b > a); // true
+console.log(a <= b); // true
+console.log(b >= a); // true
+*/
+
+/*
+let a = 20;
+let b = 30;
+let c = 10;
+
+console.log(a < b && a > c || a < b); // true
+console.log(a < b && a > c); // true
+console.log(!(a == b) && !(a == b) && !(a == c) && !(a == c)); // true
+*/
+
+
 
