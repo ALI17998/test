@@ -447,7 +447,6 @@ console.log(! "10" != 10); // true
 console.log(! 20 == false); // true
 */
 
-
 /*
 let a = 10;
 let b = 20;
@@ -470,5 +469,215 @@ console.log(a < b && a > c); // true
 console.log(!(a == b) && !(a == b) && !(a == c) && !(a == c)); // true
 */
 
+/*
+let price = 100;
+let discount = false;
+let discountAmount = 30;
+let country = "US";
+let age = 25;
+let student = true;
+
+if (discount === true) {
+  price -= discountAmount;
+} else if (country === "us") {
+  if (student === true) {
+    price -= discountAmount + 5;
+  } else {
+    price -= discountAmount;
+  }
+} else if (age === 10) {
+  price -= discountAmount + 15;
+} else {
+  price -= discountAmount;
+}
+
+console.log(price);
+*/
+
+/*
+  //! consitional (ternary) operator 
+  condition ? If True : If False
 
 
+let theName = "Ali";
+let theGender = "Male";
+let theAge = 25;
+
+if (theGender === "Male") {
+  console.log("Mr");
+} else {
+  console.log("Mrs");
+}
+
+theGender === "Male" ? console.log("Mr") : console.log("Mrs");
+
+let result = theGender === "Male" ? "Mr" : "Mrs";
+document.write(result);
+
+console.log(`Hello ${theGender === "Male" ? "Mr" : "Mrs"} ${theName}`);
+
+theAge < 20
+  ? console.log(20)
+  : theAge > 20 && theAge < 60
+  ? console.log("20 to 60")
+  : theAge > 60
+  ? console.log("larger than 60")
+  : console.log("unknown");
+*/
+
+/*
+let price = 0; // 0 or  "" or NUll or Undefined 
+
+console.log(`The Price Is ${price || "no price"}`);
+console.log(`The Price Is ${price ?? "no price"}`);  //! return only null and undefined
+*/
+
+// let a = 15;
+
+// a < 10
+//   ? console.log(10)
+//   : a >= 10 && a <= 40
+//   ? console.log("10 to 40")
+//   : a > 40
+//   ? console.log(">40")
+//   : console.log("unknown");
+
+// let st = "Elzero Web School";
+
+// if ((st.length + st.length).toString() === "34") {
+//   console.log("Good");
+// }
+
+// if ( st.charAt(st.indexOf("W")).toLowerCase()=== "w") {
+//   console.log("Good");
+// }
+
+// if (typeof(st) === "string") {
+//   console.log("Good");
+// }
+
+// if (typeof(st.length) === "number") {
+//   console.log("Good");
+// }
+
+// if (st.slice(0,6).repeat(2) === "ElzeroElzero") {
+//   console.log("Good");
+// }
+
+// let num = 9;
+
+// num < 10
+//   ? console.log(`00${num}`)
+//   : num > 10 && num < 100
+//   ? console.log(`0${num}`)
+//   : num > 100
+//   ? console.log(num)
+//   : console.log("unknown");
+
+// let num1 = 9;
+// let str = "9";
+// let str2 = "20";
+
+// if (num1.toString() === str) {
+//   console.log("{num1} Is The Same Value As {str}");
+// }
+// if (num1 !== str) {
+//   console.log("{num1} Is The Same Value As {str} But Not The Same Type");
+// }
+
+// if (num1 !== str2) {
+//   console.log("{num1} Is Not The Same Value Or The Same Type As {str2}");
+// }
+
+// if (str !== str2) {
+//   console.log("{str} Is The Same Type As {str2} But Not The Same Value");
+// }
+
+// let num1 = 10;
+// let num2 = 30;
+// let num3 = "30";
+
+// if (num3 > num1 && typeof num3 !== typeof num1) {
+//   console.log(
+//     `${num3} Is Larger Than ${num1} And Type of ${typeof num3} Not The Same Type As type of ${typeof num1}`
+//   );
+// }
+// if(num2 > num1 && num3 == num2 && typeof num3 != typeof num2)  {
+// console.log(`${num2} Is Larger Than ${num1} And Value Is The Same As ${num3} And Type of ${typeof num3} Not The Same Type As ${typeof num2}`
+// )
+// }
+// if(num3 !== num1 && typeof num3 != typeof num2 ){
+//   console.log(`${num3} Value And Type Is Not The Same As ${num1} And Type Is Not The Same As ${num2}`
+//   )
+// }
+
+// Edit What You Want Here
+
+/*
+let num1 = 10;
+let num2 = 5;
+let num3 = 10;
+let num4 = 36;
+
+/*
+  Do Not Edit Below This Line
+  Needed Output
+  True 7 Times
+*/
+/*
+// Condition 1
+
+if (num1 > num2) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 2
+
+if (num1 > num2 && num1 < num4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 3
+
+if (num1 > num2 && num1 === num3) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 4
+
+if ((num1 + num2) < num4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 5
+
+if ((num1 + num3) < num4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 6
+
+if ((num1 + num2 + num3) < num4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 7
+
+if (num4 - (num1 + num3) + num2 === 21) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+*/
