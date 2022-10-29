@@ -681,3 +681,97 @@ if (num4 - (num1 + num3) + num2 === 21) {
   console.log("False");
 }
 */
+
+/*
+let day =  2;
+
+switch (day) {
+  case 0:
+    console.log("saturday");
+    break;
+  case 1:
+    console.log("sunday");
+    break;
+  case 2:
+    console.log("monday");
+    break;
+  default:
+    console.log("unknown day");
+}
+*/
+
+/*
+let day = "tuesday";
+day = day.trim();
+day = day.charAt(0).toUpperCase() + day.slice(1);
+
+switch (day) {
+  case "Friday":
+  case "Saturday":
+  case "Sunday":
+    console.log("no appointment available");
+    break;
+  case "Monday":
+  case "Thursday":
+    console.log("From 10:00 AM to 5:00 PM");
+    break;
+  case "Tuesday":
+    console.log("From 8:00 AM to 6:00 PM");
+    break;
+  case "Wednesday":
+    console.log("From 7:00 AM to 3:00 PM");
+    break;
+  default:
+    console.log("not a valid day");
+}
+*/
+
+/*
+let job = "Developer";
+let salary = 0;
+
+switch (job) {
+  case "Manager":
+    salary = 8000;
+    console.log(`MY Salary Is ${salary}`);
+    break;
+  case "IT":
+  case "Support":
+    salary = 9000;
+    console.log(`MY Salary Is ${salary}`);
+    break;
+  case "Developer":
+  case "Designer":
+    salary = 4000;
+    console.log(`MY Salary Is ${salary}`);
+    break;
+  default:
+    console.log(`not a valid title`);
+}
+*/
+/*
+holidays = 3;
+let money = 0;
+
+if (holidays == 0) {
+  money = 5000;
+  console.log(`My Money is ${money}`);
+} else if (holidays == 1 || holidays == 2) {
+  money = 3000;
+  console.log(`My Money is ${money}`);
+} else if (holidays == 3) {
+  money = 2000;
+  console.log(`My Money is ${money}`);
+} else if (holidays == 4) {
+  money = 1000;
+  console.log(`My Money is ${money}`);
+} else if (holidays == 5) {
+  money = 0;
+  console.log(`My Money is ${money}`);
+} else {
+  money = 0;
+  console.log(`My Money is ${money}`);
+}
+*/
+
+
