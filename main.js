@@ -210,7 +210,6 @@ console.log(-d + ++g * ++e + ++f);  //173
 */
 
 //!
-
 // console.log(10 * 20 + 15 % 3 + 190 + 10 - 400);
 // console.log(10 * 20 * 15 % 3 * 190 * 10 * 400);
 
@@ -772,6 +771,204 @@ if (holidays == 0) {
   money = 0;
   console.log(`My Money is ${money}`);
 }
+*/
+
+/*
+let myFriends = ["ali", "ahmed", "mohamed", ["sameh", "mostafa"]];
+
+console.log(`hello ${myFriends[1]}`);
+console.log(`hello ${myFriends[1][1]}`);
+console.log(`hello ${myFriends[3][1]}`);
+console.log(`hello ${myFriends[3][1][2]}`);
+//----------------------------------
+console.log(myFriends);
+myFriends[1] = "sarah";
+console.log(myFriends);
+myFriends[3] = ["sameh ", "soha"];
+console.log(myFriends);
+myFriends[3] = "sameh";
+console.log(myFriends);
+//-----------------------------------
+console.log(myFriends.length);  //4
+myFriends[6] = "gamal";
+console.log(myFriends.length);  //7
+console.log(myFriends);
+
+myFriends[myFriends.length] = "new";  // add a new element to the end of the array dynamically 
+console.log(myFriends);
+
+myFriends[myFriends.length - 1] = "new-2";    // update an element (the last one in this example) dynamically
+console.log(myFriends);
+
+myFriends.length = 2;
+console.log(myFriends);
+//-----------------------------------
+*/
+/*
+let list = ["ali","ahmed","sarah","mohamed"];
+console.log(list);
+
+list.unshift("osama","nabil");
+console.log(list);
+
+list.push("ibrahim","sameh");
+console.log(list);
+
+let first = list.shift();
+console.log(list);
+//-------------------------
+console.log(`first is ${first}`);
+//-------------------------
+
+let last = list.pop();
+console.log(list);
+//-------------------------
+console.log(`last is ${last}`);
+//-------------------------
+*/
+
+/*
+let list = ["ahmed","ali","mohamed","alaa","sayed"];
+console.log(list);
+
+console.log(list.indexOf("ali"));
+console.log(list.indexOf("ali", 3));
+if(list.indexOf("ali",3) === -1){
+  console.log("not found")
+}
+console.log(list.lastIndexOf("mohamed"));
+console.log(list.lastIndexOf("mohamed", -4));
+
+console.log(list.includes("ali"));
+console.log(list.includes("ali",3));
+*/
+
+/*
+let list = [10, "ali", "mohamed", "90",1000,100,20,"10",-20,-10,2000];
+console.log(list);
+console.log(list.sort());
+console.log(list.reverse());
+console.log(list.sort().reverse());
+*/
+/*
+let list = ["ahmed","ali","mohamed","alaa","sayed"];
+
+console.log(list);
+console.log(list.slice());
+console.log(list.slice(2));
+console.log(list.slice(1,4));
+console.log(list.slice(-2));
+console.log(list.slice(1,-2));
+console.log(list.slice(-4,-2));
+console.log(list);   // slice don't change the array
+//----------------------------
+list.splice(0,0,"sarah");   // start (mandatory) , to remove , add
+console.log(list);
+
+list.splice(1,2,"nabil");   
+console.log(list);
+*/
+/*
+let list1 = ["ali", "sameh","ahmed","abod","mohamed"];
+let list2 = ["sarah","esraa"];
+let list3 = ["asmaa","nabil"];
+
+let allLists = list1.concat(list2,list3,"gamal",["1","2"]);
+console.log(allLists);
+
+console.log(allLists.join());   // convert to string
+console.log(allLists.join(""));
+console.log(allLists.join(" # "));
+*/
+
+/*
+let list = ["Ahmed", "Elham", "Osama", "Gamal"];
+let num = 3;
+
+// Method 1
+console.log(list.slice(num - num, num)); // ["Ahmed", "Elham", "Osama"];
+
+// Method 2
+list.pop();
+console.log(list);   // ["Ahmed", "Elham", "Osama"];
+
+*/
+
+/*
+let friends = ["Ahmed", "Eman", "Osama", "Gamal"];
+
+friends.pop();
+friends.shift();
+console.log(friends); // ["Eman", "Osama"]
+*/
+/*
+let arrOne = ["C", "D", "X"];
+let arrTwo = ["A", "B", "Z"];
+let finalArr = arrOne.concat(arrTwo).sort().reverse();
+
+
+console.log(finalArr); // ["Z", "X", "D", "C", "B", "A"]
+
+*/
+/*
+let website = "Go";
+let words = [`${website}ogle`, "Facebook", ["Elzero", "Web", "School"]];
+
+console.log(words[website.length][0].slice(website.length).toUpperCase()); // ZERO
+*/
+/*
+let needle = "JS";
+let haystack = ["PHP", "JS", "Python"];
+
+// Write 3 Solutions
+
+if(haystack.includes(needle)){
+  console.log("found")
+}
+if( haystack.indexOf(needle)){
+  console.log("found")
+}
+if(haystack[1] === needle){
+  console.log("found")
+}
+
+let arr1 = ["A", "C", "X"];
+let arr2 = ["D", "E", "F", "Y"];
+let allArrs = arr1.concat(arr2).sort();
+
+// Your Code Here
+
+console.log(allArrs.join("").toLowerCase().slice(arr2.length)); // fxy
+
+*/
+/*
+let zero = 0;
+let counter = 3;
+let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
+
+my.pop();
+my.pop();
+console.log(my.reverse());   // ["Osama", "Elham", "Mazero", "Ahmed"];
+console.log(my.slice( ++zero , counter)); // ["Elham", "Mazero"]
+my.splice(0,my.length,"Elzero")
+console.log(my.toString()); // "Elzero"
+console.log(my.toString().charAt( ++counter ) + my.toString().charAt( ++counter ).toUpperCase() );    // "rO"
+
+*/
+/*
+let zero = 0;
+let counter = 3;
+let my = ["Ahmed", "Mazero", "Elham", "Osama", "Gamal", "Ameer"];
+
+my.pop();
+my.pop();
+console.log(my.reverse()); // ["Osama", "Elham", "Mazero", "Ahmed"];
+
+console.log(my.slice(++zero,counter)); // ["Elham", "Mazero"]
+
+my.splice(--zero,++counter,"Elzero")
+console.log(my[0]); // "Elzero"
+console.log(my[zero].slice(counter,++counter) + my[zero].slice(counter).toUpperCase()); // "rO"
 */
 
 

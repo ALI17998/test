@@ -11,13 +11,17 @@
 /*************
 global rules 
 **************/
-* {
+*,*::before,*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 body {
   font-family: "Cairo", sans-serif;
+  /* Prevent background color leak outs */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
 }
 html {
   scroll-behavior: smooth;
@@ -66,5 +70,24 @@ p {
 
 /* component  */
 
-
 /* end component  */
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  width: 50%;
+  max-width: 800px;
+  min-width: 480px;
+  margin: 0 auto;
+}
+
+.form input[type="number"] {
+  width: 200px;
+}
+
+.lastResult {
+  color: white;
+  padding: 3px;
+}
