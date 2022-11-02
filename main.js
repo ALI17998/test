@@ -971,4 +971,316 @@ console.log(my[0]); // "Elzero"
 console.log(my[zero].slice(counter,++counter) + my[zero].slice(counter).toUpperCase()); // "rO"
 */
 
+/*
+let list = ["Osama","Ahemd","Ali","mohamed","sayed","asmaa"]
+
+for (let i = 0; i < list.length; i++){
+  console.log(list[i]);
+}
+*/
+
+/*
+let list = [1, 2, 3, "Osama", "Ahemd", 5, 6,  "Ali", "mohamed", "sayed", "asmaa"];
+
+let names = [];
+let nums = [];
+for (i = 0; i < list.length; i++)
+  if (typeof list[i] === "string") {
+    names.push(list[i]);
+  }else if (typeof list[i] === "number"){
+    nums.push(list[i])
+  }
+
+console.log(names);
+console.log(nums);
+*/
+/*
+let products = ["keyboard", "mouse", "pen", "pad", "monitor"];
+let colors = ["red", "green", "black"];
+let models = [2020, 2021];
+
+for (i = 0; i < products.length; i++) {
+  console.log(`-//${products[i]}//`);
+  console.log("  colors:");
+  for(j = 0; j < colors.length; j++){
+    console.log(`  * ${colors[j]}`);
+  }
+  console.log("  models:");
+  for(k =  0; k < models.length; k++){
+    console.log(`  * ${models[k]}`)
+  }
+}
+*/
+/*
+let products = ["keyboard", "mouse", 10, 20, "pen", "pad", 40, 60, "monitor"];
+let colors = ["red", "green", "black"];
+
+for (let i = 0; i < products.length; i++) {
+  console.log(products[i]);
+  if (products[i] === "pen") {
+    break;
+  }
+}
+console.log("*".repeat(40));
+mainloop: for (let i = 0; i < products.length; i++) {
+  console.log(`* ${products[i]}`);
+  nestedloop: for (let j = 0; j < colors.length; j++) {
+    console.log(`- ${colors[j]}`)
+    if (colors[j] === "green") {
+      break mainloop;
+    }
+  }
+}
+*/
+
+/*
+  Loop For Advanced Example
+*/
+/*
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let i = 0;
+
+for (;;) {
+  console.log(products[i]);
+  i += 2;
+  if (i === products.length) break;
+}
+*/
+
+/*
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let colors = ["red", "green", "black"];
+let showCount = 5;
+
+document.write(`<h1>show ${showCount} products</h1>`);
+for (let i = 0; i < showCount; i++) {
+  document.write(`<div>`);
+  document.write(`<h3> [${i + 1}] ${products[i]}</h3>`);
+  document.write(`<h4>colors:</h4>`);
+  for (let j = 0; j < colors.length; j++) {
+    document.write(`<p>${colors[j]}</p>`);
+  }
+  document.write(`<p>${colors.join(" | ")}</p>`);
+  document.write(`</div>`);
+}
+*/
+/*
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let i = 0;
+
+// while(i < products.length){
+//   console.log(products[i]);
+//   i += 1;
+// }
+
+do{
+  console.log(i);
+  i++;
+} while(false);
+console.log(i);
+*/
+
+/*
+let start = 10;
+let end = 100;
+let exclude = 40;
+
+for(let i = start; i <= end; i += start){
+  if(i == exclude){
+    continue;
+  }
+  console.log(i);
+}
+*/
+
+/*
+let start = 10;
+let end = 0;
+let stop = 3;
+
+for(let i = start; i > end; i-- ){
+  if(i < start){
+    i = `0${i}`
+  }
+  console.log(i);
+  if(i === `0${stop}`){
+    break;
+  }
+}
+*/
+
+/*
+let start = 1;
+let end = 6;
+let breaker = 2;
+
+for(let i = start; i <= end; i++){
+  console.log(i)
+  console.log("--"+breaker)
+  console.log(`-- ${end - breaker}`)
+}
+*/
+/*
+let index = 10;
+let jump = 2;
+let end = 0;
+
+for (;;) {
+  if(index == jump) continue;
+  console.log(index);
+  index -= 2;
+  if (index === end) break;
+}
+*/
+
+/*
+let friends = ["Ahmed", "Sayed", "Eman", "Mahmoud", "Ameer", "Osama", "Sameh"];
+let letter = "a";
+
+i = friends.length - friends.length;
+counter = letter.length;
+for (; i < friends.length; i++) {
+  if (friends[i].startsWith(letter.toUpperCase())) {
+    continue;
+  }
+  console.log(`"${counter} => ${friends[i]}"`);
+  counter++;
+}
+*/
+
+/*
+let start = 0;
+let swappedName = "elZerO";
+let str ="";
+for (let i = start; i < swappedName.length; i++) {
+  if (swappedName[i] === swappedName[i].toUpperCase()) {
+    str += swappedName[i].toLowerCase();
+  } else {
+    str += swappedName[i].toUpperCase();
+  }
+}
+console.log(str);
+
+/////////////////////////////////////////
+
+let hello = "hElLO";
+let newWord = [];
+
+for (i=0; i<hello.length; i++) {
+  if (hello[i] == hello[i].toLowerCase()) {
+      newWord[i] = hello[i].toUpperCase();
+  }
+  else {
+    newWord[i] = hello[i].toLowerCase();
+  }
+}
+console.log(newWord.join(""));
+*/
+
+/*
+let start = 0;
+let mix = [1, 2, 3, "A", "B", "C", 4];
+for(let i = start; i < mix.length; i++){
+  if (typeof mix[i] == "string" || mix[i] == mix[start]) continue;
+  console.log(mix[i]);
+}
+*/
+
+// let friends = ["Ahmed", "Sayed", "Ali", 1, 2, "Mahmoud", "Amany"];
+// let i = 0;
+// let counter = 0;
+
+// for(let i = index; i < friends.length; i++){
+//   if( typeof friends[i] == "number" || friends[0].charAt(0) === friends[i][0] ){
+//     continue;
+//   }
+//   console.log(`"${++counter}=>${friends[i]}"`);
+// }
+
+// while (i < friends.length) {
+//     if( typeof friends[i] == "number" || friends[0].charAt(0) === friends[i][0] ){
+//       i++;
+//       continue;
+//   }
+//   console.log(`"${++counter}=>${friends[i]}"`);
+//   i += 1;
+// }
+/*
+let myAdmins = ["Ahmed", "Osama", "Sayed", "Stop", "Samera"];
+let myEmployees = [
+  "Amgad",
+  "Samah",
+  "Ameer",
+  "Omar",
+  "Othman",
+  "Amany",
+  "Samia",
+  "Anwar",
+];
+document.write(`<div>WE Have ${myAdmins.indexOf("Stop")} Admins</div>`);
+myAdmins = myAdmins.slice(0, myAdmins.indexOf("Stop"));
+let i = 0;
+let counter1 = 1;
+
+for (; i < myAdmins.length; i++) {
+  document.write(
+    `<hr><h2>the admin for team ${counter1} is ${myAdmins[i]} </h2>`
+  );
+  ++counter1;
+  document.write(`<h3>Team Members:</h3>`);
+  let counter2 = 1;
+  let j = 0
+  for (; j < myEmployees.length; j++) {
+    if (myAdmins[i][0] === myEmployees[j][0]) {
+      document.write(`<p>-${counter2}  ${myEmployees[j]}</p>`);
+      ++counter2;
+    } else {
+      continue;
+    }
+  }
+}
+*/
+/*
+  Loop Challenge
+*/
+
+// let myAdmins = ["Ahmed", "Osama", "Sayed", "Stop", "Samera"];
+// let myEmployees = [
+//   "Amgad",
+//   "Samah",
+//   "Ameer",
+//   "Omar",
+//   "Othman",
+//   "Amany",
+//   "Samia",
+//   "Anwar",
+// ];
+
+// let i = 0;
+// for (; i < myAdmins.length; i++) {
+//   if (myAdmins[i] === "Stop") {
+//     break;
+//   }
+// }
+// document.write(`<div>We Have X Admins</div>`);
+// document.write(`<div>We Have ${i} Admins</div>`);
+
+// i = 0;
+// for (; i < myAdmins.length; i++) {
+//   if (myAdmins[i] === "Stop") break;
+//   document.write(`<hr>`);
+//   document.write(`<div>The Admins For Team ${i + 1} Is ${myAdmins[i]}</div>`);
+//   document.write(`<h3>Team Members:</h3>`);
+//   let j = 0;
+//   let counter = 0;
+//   for (; j < myEmployees.length; j++) {
+//     if (myEmployees[j][0] === myAdmins[i][0]) {
+//       document.write(`<p>- ${counter + 1} ${myEmployees[j]}</p>`);
+//       counter++;
+//     } else {
+//       continue;
+//     }
+//   }
+// }
+
 

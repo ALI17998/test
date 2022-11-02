@@ -72,22 +72,9 @@ p {
 
 /* end component  */
 
-html {
-  font-family: sans-serif;
+h1,h2,h3,h4,h5,h6,p{
+  margin: 20px;
 }
-
-body {
-  width: 50%;
-  max-width: 800px;
-  min-width: 480px;
-  margin: 0 auto;
-}
-
-.form input[type="number"] {
-  width: 200px;
-}
-
-.lastResult {
-  color: white;
-  padding: 3px;
+body{
+  margin: 40px;
 }
