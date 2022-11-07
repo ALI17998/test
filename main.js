@@ -1634,5 +1634,86 @@ function calc ( one,two,...nums) {
 console.log(calc(10, myNumbers[1],myNumbers[0]));
 */
 
+// let myNums = [1,2,3,4,5,6];
+
+// let newArray = [];
+
+// for ( let i =0; i < myNums.length; i++){
+//   newArray.push(myNums[i] + myNums[i])
+// }
+// console.log(newArray);
+// with map
+
+// let addSelf = myNums.map(function(element, index, arr){
+//   return element + element;
+// })
+//convert to arrow function
+// let addSelf = myNums.map((element) => element + element);
+// console.log(addSelf);
+
+// function addition(ele){
+//   return ele + ele;
+// }
+
+// let add = myNums.map(addition);
+// console.log(addSelf);
+/*
+let swappingCases = "elZERo";
+let invertedNumbers = [1, -10, -20, 15, 100, -30];
+let ignoreBooleans = "Elz123er4o";
+
+let sw = swappingCases
+  .split("")
+  .map(function (a) {
+    return a === a.toUpperCase() ? a.toLowerCase() : a.toUpperCase();
+  })
+  .join("");
+
+console.log(sw);
+///////////////////////////////////////
+let inv = invertedNumbers.map((b) => b * -1);
+console.log(inv);
+///////////////////////////////////////
+let ig = ignoreBooleans
+  .split("")
+  .map((c) => (isNaN(parseInt(c)) ? c : ""))
+  .join("");
+console.log(ig);
+////////////////////////////////////////////
+*/
+/*
+let friends = ["ahmed", "ali", "sameh", "osama", "mohamed"];
+
+let friendsFilter = friends.filter(function (el) {
+  return el.startsWith("a");
+});
+console.log(friendsFilter);
+
+let numbers = [11, 20, 2, 5, 17, 10];
+
+let evenNumbers = numbers.filter(function (n) {
+  return n % 2 === 0;
+});
+
+console.log(evenNumbers);
+*/
+/*
+let sentence = "I Love Foood Code Too playing Much";
+let smallWords = sentence.split(" ").filter(function(ele){
+  return ele.length <= 4;
+}).join(" ");
+console.log(smallWords);
+
+/////////////////////////////////////////////////////////
+
+let Mix = "A13BS2ZX";
+
+let arr = Mix.split("").filter(function(a){
+  return ! isNaN(parseInt(a));
+}).map(function(b){
+  return b * b;
+}).join(" // ")
+console.log(arr);
+*/
 
 
