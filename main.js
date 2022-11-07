@@ -1283,4 +1283,356 @@ for (; i < myAdmins.length; i++) {
 //   }
 // }
 
+/*
+function sayHello(userName, age){
+  if(age < 20){
+    console.log("app is not suitable for you")
+  }else{
+    console.log(`Hello ${userName} Your age is ${age}`)
+  }
+}
+
+sayHello("ali",30);
+sayHello("osama",18);
+
+
+function generateYears(start,end, exclude){
+  for(let i = start; i <= end; i++ ){
+    if(i === exclude) continue;
+    console.log(i);
+  }
+}
+
+generateYears(1998, 2022, 2020);
+
+*/
+/*
+function calc(num1,num2){
+  return num1 + num2;
+}
+let result = calc(10,20);
+console.log(result);
+
+function generate(start,end){
+  for(let i = start; i <= end; i++){
+    console.log(i);
+    if(i === 15){
+      return `interrupting`;
+    }
+  }
+}
+generate(10,20);
+*/
+/*
+function sayHello(userName, age = "unknown"){
+  // if(age === undefined){
+  //   age = "enter a number please,";
+  // }
+  // age = age || "unknown";
+  return `Hello ${userName} Your Age Is ${age}`;
+}
+console.log(sayHello("ali"))
+*/
+/*
+function calc(...num){
+  let sum = 0;
+  for(let i = 0; i < num.length; i++){
+    sum += num[i];
+  }
+  return `result is ${sum}`;
+}
+console.log(calc(10,20,40,30,50))
+*/
+/*
+function show(
+  user = "unknown",
+  age = "unknown",
+  rate = 0,
+  show = "Yes",
+  ...skills
+) {
+  document.write(`<div>`);
+  document.write(`<h2>Welcome, ${user}</h2>`);
+  document.write(`<P>Age :${age}</P>`);
+  document.write(`<P>Hour Rate : $${rate}</P>`);
+  if (show === "Yes") {
+    if (skills.length > 0) {
+      document.write(`<P>Skills :</p>`);
+      for(let i = 0; i < skills.length; i++){
+        document.write(`<P>${skills[i]}</p>`);
+      }
+    } else {
+      document.write(`<P>No Skills</P>`);
+    }
+  } else {
+    if (skills.length > 0) {
+      document.write(`<P>Skills is hidden</P>`);  
+    }else{
+      document.write(`<P>No Skills</P>`);
+    }
+    document.write(`</div>`);
+  }
+}
+show("Ali", 24, 60, "Yes","html","css","JavaScript");
+*/
+/*
+function say(name, gender = "") {
+  if (gender === "Male") {
+    console.log(`Hello Mr ${name}`);
+  } else if (gender === "Female") {
+    console.log(`Hello Mrs ${name} `);
+  } else {
+    console.log(`Hello ${name}`);
+}
+}
+
+say("Osama", "Male"); // "Hello Mr Osama"
+say("Eman", "Female"); // "Hello Miss Eman"
+say("Sameh"); // "Hello Sameh"
+*/
+/*
+function calculate(firstNum, secondNum, operation = "add") {
+  if (typeof firstNum === "number" && typeof secondNum === "number") {
+    if (operation === "add") {
+      result = firstNum + secondNum;
+    } else if (operation === "subtract") {
+      result = firstNum - secondNum;
+    } else if (operation === "multiply") {
+      result = firstNum * secondNum;
+    }
+  } else if (secondNum === undefined) {
+    result = "second number is not found";
+  }
+  console.log(result);
+}
+
+calculate(20); // Second Number Not Found
+calculate(20, 30); // 50
+calculate(20, 30, "add"); // 50
+calculate(20, 30, "subtract"); // -10
+calculate(20, 30, "multiply"); // 600
+*/
+/*
+function ageInTime(theAge) {
+  if(theAge <= 10 || theAge >= 100){
+    console.log("Age Is Out Of Range");
+  }else{
+    console.log(`months : ${theAge * 12} `);
+    console.log(`weeks : ${theAge * 12 *4}`);
+    console.log(`days : ${theAge * 12 * 30}`);
+    console.log(`hours : ${theAge * 12 * 30 * 24}`);
+    console.log(`minutes : ${theAge * 12 *4*30*60}`);
+    console.log(`seconds : ${theAge * 12 *4*30*60*60}`);
+  }
+}
+
+// Needed Output
+ageInTime(110); // Age Out Of Range
+ageInTime(38); // Months Example => 456 Months
+
+*/
+/*
+function createSelectBox(startYear, endYear) {
+
+  document.write(`<select>`);
+  for(let i = startYear; i <= endYear; i++){
+    document.write(`<option value="${i}">${i}</option>`)
+  }
+  document.write(`</select>`);
+}
+createSelectBox(2000, 2020);
+*/
+
+/*
+
+function multiply (...num){
+  let sum = 1;
+    for(let i = 0; i < num.length; i++){
+      if(typeof num[i] !== "number") continue;
+      sum = parseInt(num[i])*sum;
+    }
+  console.log(sum);
+}
+
+
+multiply(10, 20); // 200
+multiply("A", 10, 30); // 300
+multiply(100.5, 10, "B"); // 1000
+
+*/
+
+//! good example
+/*
+function checkStatus(a, b, c) {
+  let list = [a, b, c],
+    name,
+    age,
+    status;
+  for (let i = 0; i < list.length; i++) {
+    typeof list[i] === "string"
+      ? (name = list[i])
+      : typeof list[i] === "number"
+      ? (age = list[i])
+      : typeof list[i] === "boolean"
+      ? (status = list[i])
+      : "";
+  }
+  if (status === true) {
+    console.log(
+      `Hello ${name}, Your Age Is ${age}  , You Are Available For Hire`
+    );
+  } else {
+    console.log(
+      `Hello ${name}, Your Age Is ${age}  , You Are NOt Available For Hire`
+    );
+  }
+}
+
+// Needed Output
+checkStatus("Osama", 38, true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+checkStatus(38, "Osama", true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+checkStatus(true, 38, "Osama"); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+checkStatus(false, "Osama", 38); // "Hello Osama, Your Age Is 38, You Are Not Available For Hire"
+checkStatus("Osama", false, 38); // "Hello Osama, Your Age Is 38, You Are Not Available For Hire"
+checkStatus(38, false, "Osama"); // "Hello Osama, Your Age Is 38, You Are Not Available For Hire"
+*/
+//! good example
+
+/*
+console.log(calc(10,20));
+function calc(num1,num2){
+  return num1 + num2;
+}
+
+//! anonymous function 
+// 
+
+let calculator = function(n1,n2){
+  return n1*n2;
+}
+console.log(calculator(10,20));
+*/
+/*
+//! nested function 
+function sayMessage(fName,lName){
+  let message = "Hello";
+
+  //nested function
+  function concatMsg(){
+    function getFullName(){
+      return `${fName} ${lName}`;
+    }
+    return `${message} ${getFullName()}`;
+  }
+  return concatMsg();
+}
+console.log(sayMessage("Ali","Elnagar"));
+*/
+/*
+//! Arrow Function : 
+
+// let print = function () {
+//   return 10;
+// };
+
+//! in case one statement we can remover braces and return
+// let print =  () => 10;
+
+// let ali = num => num;   // remove parentheses in case of one parameter
+
+// let print2 =  (num,num2) => num + num2;
+
+console.log(ali(30));
+console.log(print2(40,30));
+*/
+/*
+function parent(){
+  let a = 10;
+  function child(){
+    console.log(a);
+  }
+  child();
+}
+parent();
+
+*/
+/*
+function getDetails(name, age, country) {
+  function namePattern(){
+    return `${name.split(" ",2)[0]} ${name.split(" ",2)[1].charAt(0).toUpperCase()}.`;
+  }
+  function ageWithMessage() {
+    return `Your Age Is ${age.split(" ")[0]}`;
+  }
+  function countryTwoLetters() {
+    return `You Live In ${country.slice(0,2).toUpperCase()}`;
+  }
+  function fullDetails() {
+    return `Hello ${namePattern()} ${ageWithMessage()} ${countryTwoLetters()}`;
+  }
+  return fullDetails();
+
+}
+
+console.log(getDetails("Ali shokri", "38 Is My Age", "tunisia"));
+
+console.log(getDetails("Osama Mohamed", "38 Is My Age", "Egypt"));
+
+console.log(getDetails("Ahmed ali", "32 Is The Age", "Syria"));
+*/
+
+/*
+let itsMe = () => `Iam A normal Function`;
+console.log(itsMe());
+
+
+
+let urlCreate = (protocol, web, tld) => `${protocol}://www.${web}.${tld}`;
+console.log(urlCreate("https", "elzero", "org"));
+
+*/
+
+/*
+let  checker = zName => status => salary => status === "Available" ? `${zName}, My Salary Is ${salary}` : `Iam Not Avaialble`;
+
+console.log(checker("sarah")("Available")(4000)); // Osama, My Salary Is 4000
+console.log(checker("Ahmed")("Not Available")()); // Iam Not Avaialble
+*/
+/*
+function specialMix(...data) {
+  let sum = 0;
+  for(let i = 0; i < data.length; i++){
+    if (parseInt(data[i])){
+      sum += parseInt(data[i]);
+      }
+    else{
+    continue;
+    }
+  }
+  if( sum == 0 ){
+    return `all are strings`
+  }
+  return sum ;
+}
+console.log(specialMix(10, 20, 30,"ali")); // 60
+console.log(specialMix("10Test", "Testing", "20Cool", 50)); // 30
+console.log(specialMix("Testing", "10Testing", "40Cool")); // 50
+console.log(specialMix("Test", "Cool", "Test")); // All Is Strings
+
+*/
+/*
+let names = (...list) =>`String [${list.join("], [")}] => Done!`;
+console.log(names("ali","mohamed","sarah","sameh","mostafa"))
+*/
+
+/*
+let myNumbers = [20,50,10,60];
+
+function calc ( one,two,...nums) {
+  return one + two + nums[0];
+}
+console.log(calc(10, myNumbers[1],myNumbers[0]));
+*/
+
+
 
