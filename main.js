@@ -1716,4 +1716,377 @@ let arr = Mix.split("").filter(function(a){
 console.log(arr);
 */
 
+/*
+let nums = [10, 20, 30, 40];
+
+let add = nums.reduce(function (acc, current, index, arr) {
+  return acc + current;
+});     // will take 10 as the initial value.
+console.log(add);
+let add2 = nums.reduce(function (acc, current, index, arr) {
+  return acc + current;
+}, 5);   // 5 is the initial value .
+console.log(add2);
+*/
+
+/*
+let theBiggest = ["Bla", "Propaganda", "Other", "AAA", "Battery", "Test"];
+
+let check = theBiggest.reduce(function (acc, current) {
+  return acc.length > current.length ? acc : current;
+});
+
+console.log(check);
+
+let removeChars = ["E", "@", "@", "L", "Z", "@", "@", "E", "R", "@", "O"];
+
+let chars = removeChars
+  .filter(function (ele) {
+    return !ele.startsWith("@");
+  })
+  .reduce(function (acc, current) {
+    return `${acc}${current}`;
+  });
+console.log(chars);
+*/
+
+/*
+
+let allLis = document.querySelectorAll("ul li");
+let allDivs = document.querySelectorAll(".content div");
+
+allLis.forEach(function (ele) {
+  ele.onclick = function () {
+    // Remove Active Class From All Elements
+    allLis.forEach(function (ele) {
+      ele.classList.remove("active");
+    });
+    // Add Active Class To This Element
+    this.classList.add("active");
+    // Hide All Divs
+    allDivs.forEach(function (ele) {
+      ele.style.display = "none";
+    });
+  };
+});
+*/
+
+// let mix = [1, 2, 3, "E", 4, "l", "z", "e", "r", 5, "o"];
+
+// let arr = mix
+//   .map(function (ele) {
+//     return isNaN(parseInt(ele)) ? ele : "";
+//   })
+//   .reduce(function (acc, current) {
+//     return `${acc}${current}`;
+//   });
+// console.log(arr);
+
+/*
+let myString = "EElllzzzzzzzeroo";
+
+let string = myString.split("").filter(function(ele,index,arr){
+  console.log(ele);
+  console.log(index);
+  console.log(arr.indexOf(ele));
+  return arr.indexOf(ele) === index  ;
+});
+console.log(string);
+*/
+/*
+let myArray = ["E", "l", "z", ["e", "r"], "o"];
+
+let arr = myArray
+  .reduce(function (acc, current) {
+    return acc.concat(current);
+  },[]).join("");
+console.log(arr);
+*/
+
+/*
+let numsAndStrings = [1, 10, -10, -20, 5, "A", 3, "B", "C"];
+
+let arr = numsAndStrings.filter(function(ele){
+  return parseInt(ele);
+}).map(function(ele){
+  return -ele;
+})
+
+console.log(arr);
+*/
+
+/*
+let nums = [2, 12, 11, 5, 10, 1, 99];
+
+let num = nums.reduce(function(acc,current){
+  return current % 2 !== 0 ? acc + current : acc * current ;
+},1);
+console.log(num);
+*/
+/*
+let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+
+let solution = myString
+  .split("")
+  .filter(function (ele, index, arr) {
+    return isNaN(parseInt(ele)) && ele !== ",";
+  })
+  .map(function (ele) {
+    return ele === "_" ? " " : ele;
+  })
+  .reduce(function (acc, current) {
+    return acc + current;
+  }).split("");
+solution.pop();
+solution.shift();
+console.log(solution.join("")); // Elzero Web School
+*/
+
+/*
+let myVar = "lastName";
+
+let user = {
+  theName: "Ali",
+  lastName: "elnagar",
+  country: "Egypt",
+  "my age": 25,
+};
+
+console.log(user.theName);
+console.log(user.country);
+console.log(user.myVar); // undefined
+console.log(user[myVar]);
+console.log(user["my age"]);
+*/
+
+/*
+let user = {
+  // properties
+  name: "Ali",
+  age: 25,
+  skills: ["HTML", "CSS", "JS"],
+  available: false,
+  addresses: {
+    Ksa: "Riyadh",
+    egypt: {
+      one: "Cairo",
+      two: "Giza",
+    },
+  },
+  // methods
+  checkAv: function () {
+    if (user.available === true) {
+      return `Free For Work`;
+    } else {
+      return `Not Free`;
+    }
+  },
+};
+
+
+console.log(user.name);
+console.log(user.age);
+console.log(user.skills.join(" | "));
+console.log(user.skills[2]);
+console.log(user.addresses.Ksa);
+console.log(user["addresses"].egypt.one);
+console.log(user["addresses"]["egypt"]["two"]);
+
+console.log(user.checkAv());
+
+//! editing the object
+user.age = 30;
+user.name = "ahmed";
+user.sayHello = function(){
+  return `Hello ${user.name}`;
+}
+console.log(user.name);
+console.log(user.age);
+console.log(user.sayHello());
+
+// create object with other way
+
+let ali = new Object({
+  age:20,
+});
+console.log(ali.age);
+
+*/
+
+/*
+  // Object
+  // - Create Object With Create Method
+
+
+let user = {
+  age: 20,
+  doubleAge: function () {
+    return this.age * 2;
+  },
+};
+
+console.log(user);
+console.log(user.age);
+console.log(user.doubleAge());
+
+let obj = Object.create({});
+
+obj.a = 100;
+
+console.log(obj);
+
+let copyObj = Object.create(user);
+
+copyObj.age = 50;
+
+console.log(copyObj);
+console.log(copyObj.age);
+console.log(copyObj.doubleAge());
+*/
+
+/*
+  Object
+  - Create Object With Assign Method
+
+
+let obj1 = {
+  prop1: 1,
+  meth1: function () {
+    return this.prop1;
+  },
+};
+
+let obj2 = {
+  prop2: 2,
+  meth2: function () {
+    return this.prop2;
+  },
+};
+
+let targetObject = {
+  prop1: 100,
+  prop3: 3,
+};
+
+let finalObject = Object.assign(targetObject, obj1, obj2);
+
+finalObject.prop1 = 200;
+finalObject.prop4 = 4;
+
+console.log(finalObject);
+
+let newObject = Object.assign({}, obj1, { prop5: 5, prop6: 6 });
+
+console.log(newObject);
+*/
+
+/*
+let member = {
+  name: "elzero",
+  age:38,
+  country:"egypt",
+  fullDetails:function(){
+    return `my name is ${member.name} my age is ${member.age} i live in ${member.country}`;
+  },
+};
+
+console.log(member.name); // Elzero
+console.log(member.age); // 38
+console.log(member.country); // Egypt
+console.log(member.fullDetails());
+// My Name Is Elzero, My Age Is 38, I Live in Egypt
+*/
+/*
+// Method One
+let objMethodOne = {
+  property: "method one",
+};
+console.log(objMethodOne.property); // "Method One"
+
+// Method Two
+let objMethodTwo = new Object({
+  property: "method two",
+});
+console.log(objMethodTwo.property); // "Method Two"
+
+// Method Three
+let objMethodThree = Object.create(objMethodOne);
+objMethodThree.property = "method three";
+console.log(objMethodThree.property); // "Method Three"
+
+// Method Four
+let objMethodFour = Object.assign({},objMethodThree);
+objMethodFour.property = "method four";
+console.log(objMethodFour.property); // "Method Four"
+*/
+
+/*
+let a = 1;
+
+let threeNums = {
+  b: 2,
+  c: 3,
+  d: 4,
+};
+
+let twoNums = {
+  e: 5,
+  f: 6,
+};
+
+let finalObject = Object.assign({}, { a }, threeNums, twoNums);
+console.log(finalObject);
+*/
+
+//!---------------------------
+//!--------Example------------
+
+/*
+let myFavGames = {
+  "Trinity Universe": {
+    publisher: "NIS America",
+    price: 40,
+  },
+  "Titan Quest": {
+    publisher: "THQ",
+    bestThree: {
+      one: "Immortal Throne",
+      two: "Ragnarök",
+      three: "Atlantis",
+    },
+    price: 50,
+  },
+  YS: {
+    publisher: "Falcom",
+    bestThree: {
+      one: "Oath in Felghana",
+      two: "Ark Of Napishtim",
+      three: "origin",
+    },
+    price: 40,
+  },
+};
+
+// Code One => How To Get Object Length ?
+let objectLength = Object.keys(myFavGames).length;
+console.log("-".repeat(50));
+console.log("-".repeat(50));
+for (let i = 0; i < objectLength; i++) {
+  console.log(`The Game Name Is ${Object.keys(myFavGames)[i]}`);
+  console.log(`The Publisher Is ${Object.values(myFavGames)[i].publisher}`);
+  console.log(`The Price Is ${Object.values(myFavGames)[i].price} `);
+  // Check If Nested Object Has Property (bestThree)
+  if (myFavGames[Object.keys(myFavGames)[i]].hasOwnProperty("bestThree")) {
+    console.log("- Game Has Releases");
+    console.log(`First => ${myFavGames[Object.keys(myFavGames)[i]].bestThree.one}`);
+    console.log(`Second => ${myFavGames[Object.keys(myFavGames)[i]].bestThree.two}`);
+    console.log(`Third => ${myFavGames[Object.keys(myFavGames)[i]].bestThree.three}`);
+  }
+  console.log("-".repeat(50));
+  console.log("-".repeat(50));
+}
+*/
+
+//!-----------End-------------
+//!---------------------------
 
