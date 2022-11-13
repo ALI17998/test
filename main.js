@@ -2090,3 +2090,219 @@ for (let i = 0; i < objectLength; i++) {
 //!-----------End-------------
 //!---------------------------
 
+/*
+  DOM
+
+let myIdElement = document.getElementById("my-div");
+let myTagElements = document.getElementsByTagName("p");
+let myClassElement = document.getElementsByClassName("my-span");
+let myQueryElement = document.querySelector(".my-span");
+let myQueryAllElement = document.querySelectorAll(".my-span");
+
+console.log(myIdElement);
+console.log(myTagElements[1]);
+console.log(myClassElement[1]);
+console.log(myQueryElement);
+console.log(myQueryAllElement[1]);
+
+console.log(document.title);
+console.log(document.body);
+console.log(document.forms[0].one.value);
+console.log(document.links[1].href);
+*/
+
+/*
+let myElement = document.querySelector(".js");
+
+console.log(myElement.innerHTML);
+console.log(myElement.textContent);
+
+myElement.innerHTML = "Text from <span>main.js</span> file";
+myElement.textContent = "Text from <span>main.js</span> file";
+
+
+document.images[0].src = "https://google.com";
+document.images[0].alt = "alternative";
+document.images[0].title = "picture";
+document.images[0].id = "pic";
+document.images[0].className = "img";
+
+let myLink = document.querySelector(".link");
+
+console.log(myLink.getAttribute("class"));
+console.log(myLink.querySelector("href"));
+
+myLink.setAttribute("href", "https://twitter.com");
+myLink.setAttribute("title", "Twitter");
+*/
+/*
+console.log(document.getElementsByTagName("p")[0].attributes);
+
+let myP = document.getElementsByTagName("p")[0];
+
+if (myP.hasAttribute("data-src")) {
+  if (myP.getAttribute("data-src") === "") {
+    myP.removeAttribute("data-src");
+  } else {
+    myP.setAttribute("data-src", "New Value");
+  }
+} else {
+  console.log(`Not Found`);
+}
+
+if (myP.hasAttributes()) {
+  console.log(`Has Attributes`);
+}
+
+if (document.getElementsByTagName("div")[0].hasAttributes()) {
+  console.log(`Has Attributes`);
+} else {
+  console.log(`Div Has No Attributes`);
+}
+*/
+/*
+let myElement = document.createElement("div");
+let myAttr = document.createAttribute("data-custom");
+let myText = document.createTextNode("product one");
+let myComment = document.createComment("This is div");
+
+myElement.ClassName = "Product";
+myElement.setAttributeNode(myAttr);
+myElement.setAttribute("data-test","Testing");
+//append text to element 
+myElement.appendChild(myText);
+//append element to body
+document.body.appendChild(myElement);
+//append comment
+myElement.appendChild(myComment);
+
+*/
+
+/*
+DOM [Create Elements]
+- Practice Product With Heading And Paragraph
+*/
+/*
+for (let i = 1; i <= 10; i++) {
+  let myElement = document.createElement("div");
+  let myH = document.createElement("h2");
+  let myp = document.createElement("p");
+  let hText = document.createTextNode(`heading${i}`);
+  let pText = document.createTextNode(`paragraph${i}`);
+
+  myH.appendChild(hText);
+  myElement.appendChild(myH);
+  myp.appendChild(pText);
+  myH.appendChild(myp);
+
+  myElement.className = `product${i}`;
+  document.body.appendChild(myElement);
+}
+*/
+
+/*
+let myElement = document.querySelector("div");
+
+console.log(myElement);
+console.log(myElement.children);
+console.log(myElement.children[0]);
+console.log(myElement.childNodes);
+console.log(myElement.childNodes[0]);
+
+console.log(myElement.firstChild);
+console.log(myElement.lastChild);
+
+console.log(myElement.firstElementChild);
+console.log(myElement.lastElementChild);
+*/
+/*
+let userInput = document.querySelector("[name='username']");
+let ageInput = document.querySelector("[name='age']");
+document.forms[0].onsubmit = function(e){
+  let userValid = false;
+  let userAge = false;
+  if(userInput.Value.length <= 10 && userInput.value !==""){
+    userValid = true;
+  }
+  if(ageInput.value !==""){
+    userAge = true;
+  }
+  if(userValid === false || userAge === false){
+    e.preventDefault();
+  }
+}
+*/
+
+/*
+let myImg = document.querySelectorAll("div img");
+console.log(myImg);
+for (let i = 0; i <= myImg.length; i++) {
+  myImg[i].src = "https://elzero.org/wp-content/themes/elzero/imgs/logo.png";
+  myImg[i].alt = "elzero logo";
+}
+*/
+
+/*
+
+let myInput = document.querySelector("[name='dollar']");
+let myDiv = document.querySelector("[class='result']");
+
+myInput.oninput = function(){
+  myDiv.textContent = `{${myInput.value}} USD Dollar = {${myInput.value*20}} Egyptian Pound}`;
+}
+*/
+/*
+let one = document.querySelector(".one");
+let two = document.querySelector(".two");
+
+one.textContent = one.className;
+two.textContent = `${two.className} ${two.attributes.length}`;
+one.setAttribute("title",`${one.className}`);
+two.setAttribute("title",`${two.className}`);
+*/
+
+/*
+let imgList = document.querySelectorAll("img");
+console.log(imgList);
+for (i = 0; i < imgList.length; i++) {
+  if (imgList[i].hasAttribute("alt")) {
+    imgList[i].setAttribute("alt", "elzero new");
+  } else {
+    imgList[i].setAttribute("alt", "old");
+  }
+}
+*/
+/*
+
+let numElements = document.querySelector("[name ='elements']");
+let elementText = document.querySelector("[name = 'texts']");
+let type = document.querySelector("[name = 'type']");
+let result = document.querySelector("[class='results']");
+
+
+document.forms[0].onsubmit = function (e) {
+  e.preventDefault();
+  // document.querySelectorAll(".box").forEach(function (e) {
+  //   e.remove();
+  // });
+  console.log(numElements.value);
+  let list = document.querySelectorAll(".box")
+  for(i=0;i<list.length;i++){
+    list[i].remove();
+  }
+  for(i=0;i<numElements.value;i++){
+    let newEle = document.createElement(type.value);
+    let text = document.createTextNode(elementText.value);
+    newEle.className = "box";
+    newEle.title = "element";
+    newEle.id = `${i+1}`;
+    newEle.appendChild(text);
+    result.appendChild(newEle);
+  }
+};
+*/
+
+
+
+
+//! when you finish the course go to MDN ....>>> important....>>>
