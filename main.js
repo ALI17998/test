@@ -2301,8 +2301,255 @@ document.forms[0].onsubmit = function (e) {
   }
 };
 */
+/*
+let one = document.querySelector(".one");
+let two = document.querySelector(".two");
+window.onload = function(){
+  two.focus();
+}
+one.onblur = function(){
+  document.links[0].click();
+}
+*/
+/*
+let element  = document.getElementById("My-Div");
 
+console.log(element.classList);
+console.log(typeof element.classList);
+console.log(element.classList.contains("show"));
+console.log(element.classList.contains("ali"));
+console.log(element.classList.item("3"));
+element.onclick = function(){
+  element.classList.add("new-one","new-two");
+}
+element.onclick = function(){
+  element.classList.remove("show");
+}
+element.onclick = function(){
+  element.classList.toggle("test");
+}
 
+element.style.color = "red";
+element.style.fontWeight = 'bold';
+element.style.cssText = "font-weight:bold; color:black; opacity:0.5;"   // all in one
+
+element.style.removeProperty( "opacity");
+element.style.setProperty("color","yellow","important");
+
+// from stylesheet
+document.styleSheets[3].cssRules[13].style.removeProperty("line-height");
+document.styleSheets[3].cssRules[13].style.setProperty("background-color","red");
+*/
+
+/*
+  DOM [Deal With Elements]
+  - before [Element || String]
+  - after [Element || String]
+  - append [Element || String]
+  - prepend [Element || String]
+  - remove
+*/
+
+// let element = document.getElementById("my-div");
+// let createdP = document.createElement("p");
+
+// element.remove();
+
+/*
+  DOM [Traversing]
+  - nextSibling
+  - previousSibling
+  - nextElementSibling
+  - previousElementSibling
+  - parentElement
+*/
+
+// let span = document.querySelector(".two");
+
+// console.log(span.parentElement);
+
+// span.onclick = function () {
+//   span.parentElement.remove();
+// }
+
+/*
+  DOM [Cloning]
+  - cloneNode(Deep)
+*/
+
+// let myP = document.querySelector("p").cloneNode(true);
+// let myDiv = document.querySelector("div");
+
+// myP.id = `${myP.id}-clone`;
+
+// myDiv.appendChild(myP);
+
+/*
+  DOM [Add Event Listener]
+  - addEventListener
+  - Use Without On
+  - Attach Multiple Events
+  - Error Test
+
+  Search
+  - Capture & Bubbling JavaScript
+  - removeEventListener
+*/
+
+// let myP = document.querySelector("p");
+
+// myP.onclick = one;
+// myP.onclick = two;
+
+// function one() {
+//   console.log("Message From OnClick 1");
+// }
+// function two() {
+//   console.log("Message From OnClick 2");
+// }
+
+// window.onload = "Osama";
+
+// myP.addEventListener("click", function () {
+//   console.log("Message From OnClick 1 Event");
+// });
+
+// myP.addEventListener("click", one);
+// myP.addEventListener("click", two);
+
+// myP.addEventListener("click", "String"); // Error
+
+// myP.onclick = function () {
+//   let newP = myP.cloneNode(true);
+//   newP.className = "clone";
+//   document.body.appendChild(newP);
+// };
+
+// let cloned = document.querySelector(".clone"); // Error
+
+// cloned.onclick = function () {
+//   console.log("Iam Cloned");
+// };
+
+// document.addEventListener("click", function (e) {
+//   if (e.target.className === "clone") {
+//     console.log("Iam Cloned");
+//   }
+// });
+
+/*
+let adds = document.querySelector(".classes-to-add");
+let removes = document.querySelector(".classes-to-remove");
+let current = document.querySelector("[name='current']");
+let parentDiv = document.querySelector(".classes-list");
+let addToDiv = document.querySelector(".classes-list div");
+
+function addOrRemove() {
+  // remove current spans first
+  document.querySelectorAll("span").forEach((el) => el.remove());
+  // add or remove to the classList
+  for (i = 0; i < this.value.trim().split(" ").length; i++) {
+    if (adds.value) {
+      current.classList.add(adds.value.toLowerCase().trim().split(" ")[i]);
+
+    }
+    if (removes.value) {
+      current.classList.remove(
+        removes.value.toLowerCase().trim().split(" ")[i]
+      );
+    }
+  }
+  this.value = "";
+  // add or remove to spans
+  if (current.classList.length) {
+    addToDiv.textContent = "";
+    let myArr = [...current.classList].sort();
+    console.log(myArr);
+    for (i = 0; i < myArr.length; i++) {
+      let addToSpan = document.createElement("span");
+      addToSpan.textContent = myArr[i];
+      addToDiv.append(addToSpan);
+    }
+  } else {
+    addToDiv.textContent = "Nothing to show";
+  }
+}
+
+adds.onblur = addOrRemove;
+removes.onblur = addOrRemove;
+*/
+/*
+let myDiv = document.querySelector(".our-element");
+let myP = document.querySelector("p");
+myP.remove();
+let before = document.createElement("div");
+before.className = "start";
+before.textContent = "start";
+before.setAttribute("title","start element");
+before.setAttribute("data-value","start")
+let after = document.createElement("div");
+after.className = "end";
+after.textContent = "end";
+after.setAttribute("title","end element");
+myDiv.after(after);
+myDiv.before(before);
+*/
+/*
+let child = document.querySelector("div").childNodes[4];
+console.log(child.nodeValue.trim());
+*/
+/*
+document.addEventListener("click",function(e){
+  console.log(`this is ${e.target.nodeName}`);
+})
+*/
+
+/*
+// header
+let div = document.createElement("div");
+let myP = document.createElement("p");
+let header = document.createElement("header");
+let headLogo = document.createElement("div");
+headLogo.textContent = "Elzero";
+let nav = document.createElement("ul");
+let li1 = document.createElement("li");
+li1.textContent = "Home";
+let li2 = document.createElement("li");
+li2.textContent = "About";
+let li3 = document.createElement("li");
+li3.textContent = "Service";
+let li4 = document.createElement("li");
+li4.textContent = "Contact";
+header.style.cssText =
+  "display:flex; align-items:center; justify-content:space-between; padding:10px; background-color:white; height:40px;";
+headLogo.style.cssText = "color:green; font-weight:bold; font-size:20px;";
+nav.style.cssText =
+  "margin:0; padding:0; display:flex; gap:10px; align-items:center; justify-content:center; color:grey; list-style:none;";
+document.body.append(header);
+header.append(headLogo);
+nav.append(li1,li2,li3,li4);
+header.append(nav);
+// content
+document.body.style.height = "100vh";
+let content = document.createElement("div");
+content.style.cssText = "height:calc(100% - 80px); display:flex; flex-wrap:wrap; row-gap:20px; column-gap:30px; justify-content:center; padding:20px 0;"
+header.after(content);
+for(i=1;i<=15;i++){
+  let myDiv = document.createElement("div");
+  myDiv.style.cssText = "width:calc(90% / 3); display:flex; flex-direction:column; align-items:center; justify-content:center; background-color:white; color:grey;"
+  let mySpan = document.createElement("span");
+  mySpan.textContent = `${i}`;
+  mySpan.style.cssText  = "display:block; color:black; font-weight:bold; font-size:30px;"
+  myDiv.textContent = "product"
+  myDiv.prepend(mySpan)
+  content.append(myDiv)
+}
+// footer
+let foot = document.createElement("footer");
+foot.textContent = "Copyright 2022";
+foot.style.cssText = "color:white; text-align:center; padding:10px; background-color:green; position:absolute; bottom:0; width:100%; height:40px;"
+document.body.append(foot);
+*/
 
 
 //! when you finish the course go to MDN ....>>> important....>>>

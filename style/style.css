@@ -1,3 +1,6 @@
+
+
+
 :root {
   --main-color: #2196f3;
   --main-color-alt: #1787e0;
@@ -11,7 +14,9 @@
 /*************
 global rules 
 **************/
-*,*::before,*::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -72,12 +77,16 @@ p {
 
 /* end component  */
 
-h1,h2,h3,h4,h5,h6,p{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 20px;
 }
-body{
-  margin: 40px;
+body {
   color: white;
-  background-color:#1787e0;
+  background-color: #1787e0;
 }
-
