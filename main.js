@@ -2550,6 +2550,507 @@ foot.textContent = "Copyright 2022";
 foot.style.cssText = "color:white; text-align:center; padding:10px; background-color:green; position:absolute; bottom:0; width:100%; height:40px;"
 document.body.append(foot);
 */
+/*
+setTimeout(() => {
+  console.log(`msg`);
+}, 3000);
 
 
-//! when you finish the course go to MDN ....>>> important....>>>
+function sayMsg(){
+  console.log(`hello`);
+}
+let counter = setTimeout(sayMsg, 3000);
+
+function sayMsg(user,age){
+  console.log(`hello ${user} age is ${age}`);
+}
+setTimeout(sayMsg, 3000,"ali",25);
+
+let btn = document.querySelector("button");
+btn.onclick= function(){
+  clearTimeout(counter)
+}
+*/
+/*
+
+function sayMsg(){
+  console.log(`hello`);
+}
+setInterval(sayMsg, 1000);
+
+function sayMsg2(user,age){
+  console.log(`hello ${user} age is ${age}`);
+}
+setInterval(sayMsg2, 1500,"ali",20);
+
+let div = document.querySelector("div");
+function countdown(){
+  div.innerHTML -=1;
+  if(div.innerHTML === "0"){
+    clearInterval(counter)
+  }
+}
+let counter = (countdown, 1000);
+*/
+
+// console.log(location);
+// console.log(location.href);
+// location.href = "https://google.com";
+// location.href = "/#one";
+
+// location.href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction#getting_started_with_javascript";
+
+// console.log(location.host);
+// console.log(location.hostname);
+
+// console.log(location.protocol);
+
+// console.log(location.hash);
+
+// location.reload();
+// location.replace(); // clear history
+// location.assign(); // do not clear history
+
+// setTimeout(() => {
+//   window.open("https://google.com","_blank","width=100,height=100")
+// }, 5000);
+
+// console.log(history);
+
+/*
+let btn = document.querySelector("button");
+window.onscroll = function () {
+  if (window.scrollY >= 600) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
+btn.onclick = function () {
+  window.scrollTo({
+    left: 0,
+    top: 0,
+    behavior: "smooth",
+  });
+};
+*/
+
+// let msg = prompt("Print Number From – To", "“Example: 5-20”");
+// let newMsg = msg.toString().split("-");
+
+// if (+newMsg[0] > +newMsg[1]) {
+//   while (+newMsg[1] <= +newMsg[0]) {
+//     console.log(+newMsg[1]);
+//     newMsg[1]++;
+//   }
+// } else {
+//   while (+newMsg[0] <= +newMsg[1]) {
+//     console.log(+newMsg[0]);
+//     newMsg[0]++;
+//   }
+// }
+
+// let nums = window.prompt("Print Number From - To", "Example: 5-20");
+
+// let numsArr = nums.split("-").sort();
+// console.log(numsArr);
+
+// for (i = +numsArr[0]; i <= +numsArr[1]; i++) {
+//   console.log(i);
+// }
+
+/*
+let msg = function () {
+  let myDiv = document.querySelector(".container");
+  myDiv.style.display = "block";
+  let myPop = document.querySelector(".close");
+  myPop.addEventListener("click", function () {
+    myDiv.style.display = "none";
+  });
+};
+setTimeout(msg, 5000);
+*/
+/*
+let div = document.querySelector("div");
+function count() {
+  div.textContent -= 1;
+  if(div.textContent === "5"){
+    window.open("https://google.com","_blank","width=100px,height=100px")
+  }
+  if (div.textContent === "0") {
+    clearInterval(counter)
+  }
+}
+let counter = setInterval(count, 500);
+
+*/
+
+/*
+//set 
+window.localStorage.setItem("color","red");  // method one 
+window.localStorage.fontWeight = "bold"; // method two
+window.localStorage["fontSize"] = "20px"; // method three
+//get
+console.log(window.localStorage.getItem("color"));
+console.log(window.localStorage.fontWeight);
+console.log(window.localStorage["fontSize"]);
+// get key
+console.log(window.localStorage.key(1));
+//how to use
+let div = document.querySelector("div");
+div.style.backgroundColor = window.localStorage.getItem("color");
+console.log(window.localStorage);
+console.log(typeof window.localStorage);
+//remove one
+window.localStorage.removeItem("fontSize");
+// clear all
+window.localStorage.clear();
+*/
+//! local storage example
+/*
+let div = document.querySelector(".main");
+let lis = document.querySelectorAll("ul li");
+
+lis.forEach((li) => {
+  li.addEventListener("click", (e) => {
+    // console.log(e.currentTarget.dataset.color);
+    lis.forEach((li) => {
+      li.classList.remove("active");
+    });
+    e.currentTarget.classList.add("active");
+    div.style.backgroundColor = e.currentTarget.dataset.color
+    window.localStorage.setItem("color",e.currentTarget.dataset.color)
+  });
+});
+if(window.localStorage.getItem("color")){
+  div.style.backgroundColor = window.localStorage.getItem("color");
+  lis.forEach((li) => {
+    li.classList.remove("active");
+  });
+  document.querySelector(`[data-color=${window.localStorage.getItem("color")}]`).classList.add("active");
+}
+
+//! session storage example
+document.querySelector(".name").onblur = function () {
+  // console.log(this.value);
+  window.sessionStorage.setItem("input-name", this.value);
+};
+*/
+
+//! 111-114 tasks
+/*
+//one
+
+let color = document.querySelector("[name='colors']");
+let font = document.querySelector("[name='fonts']");
+let size = document.querySelector("[name='sizes']");
+let exp = document.querySelector(".test");
+
+let colors = ["red", "green", "blue", "black"];
+let fonts = ["Cairo", "cursive", "fantasy"];
+
+colors.forEach(function (e) {
+  let option = document.createElement("option");
+  option.textContent = e;
+  option.value = e;
+  color.appendChild(option);
+});
+
+color.onchange = function () {
+  exp.style.color = this.value;
+  localStorage.setItem("color", this.value);
+};
+
+
+if (localStorage.getItem("color")) {
+  exp.style.color = localStorage.getItem("color");
+  let option = document.querySelector(
+    `[value='${localStorage.getItem("color")}']`
+  );
+  option.setAttribute("selected", true);
+}
+/////////////////////////////////////////////////////
+fonts.forEach(function (el) {
+  let option = document.createElement("option");
+  option.textContent = el;
+  option.value = el;
+  font.appendChild(option);
+});
+
+font.onchange = function () {
+  exp.style.fontFamily = this.value;
+  localStorage.setItem("fontWeight", this.value);
+};
+
+if (localStorage.getItem("fontWeight")) {
+  exp.style.fontFamily = localStorage.getItem("fontWeight");
+  let option = document.querySelector(
+    `[value='${localStorage.getItem("fontWeight")}']`
+  );
+  option.setAttribute("selected", true);
+}
+///////////////////////////////////////////////////////////
+for (i = 16; i <= 32; i += 2) {
+  let option = document.createElement("option");
+  option.textContent = `${i} px`;
+  option.value = `${i}px`;
+  size.appendChild(option);
+}
+size.onchange = function () {
+  exp.style.fontSize = this.value;
+  localStorage.setItem("fontSize", this.value);
+};
+
+if (localStorage.getItem("fontSize")) {
+  exp.style.fontSize = localStorage.getItem("fontSize");
+  let option = document.querySelector(
+    `[value='${localStorage.getItem("fontSize")}']`
+  );
+  option.setAttribute("selected", true);
+}
+
+
+// other solution for one
+
+let selectFont = document.querySelector("select[name='font']");
+let selectColor = document.querySelector("select[name='color']");
+let selectSize = document.querySelector("select[name='size']");
+selectFont.addEventListener("change", (e) => {
+setInLocal("font","fontFamily");
+});
+selectColor.addEventListener("change", (e) => {
+  setInLocal("color","color");
+});
+selectSize.addEventListener("change", (e) => {
+setInLocal("size","fontSize");
+});
+
+window.onload = function () {
+  if (window.localStorage.getItem("font")) {
+    document.body.style.fontFamily = window.localStorage.getItem("font");
+    selectFont.value = window.localStorage.getItem("font");
+  }
+  if (window.localStorage.getItem("color")) {
+    document.body.style.color = window.localStorage.getItem("color");
+    selectColor.value = window.localStorage.getItem("color");
+  }
+  if (window.localStorage.getItem("size")) {
+    document.body.style.fontSize = `${window.localStorage.getItem("size")}px`;
+    selectSize.value = window.localStorage.getItem("size");
+  }
+};
+function setInLocal(name,aStyle) {
+  var select = document.querySelector(`select[name="${name}"]`);
+  var value = select.value;
+  window.localStorage.setItem(`${name}`, value);
+  if(aStyle == "fontSize") {
+    document.body.style[`${aStyle}`] = `${window.localStorage.getItem(`${name}`)}px`;
+  }else {
+    document.body.style[`${aStyle}`] = `${window.localStorage.getItem(`${name}`)}`;
+  }
+
+  select.value = window.localStorage.getItem(`${name}`);
+}
+
+*/
+
+/*
+//two
+
+let text = document.querySelector("[type='text']");
+let email = document.querySelector("[type='email']");
+let number = document.querySelector("[type='number']");
+let options = document.querySelector("[name='options']");
+
+// text.onblur = function () {
+//   window.sessionStorage.setItem("input-text", this.value);
+// };
+text.addEventListener("blur", (e) => {
+  sessionStorage.setItem("text", e.target.value);
+});
+email.addEventListener("blur", (e) => {
+  sessionStorage.setItem("email", e.target.value);
+});
+number.addEventListener("blur", (e) => {
+  sessionStorage.setItem("number", e.target.value);
+});
+options.addEventListener("change", (e) => {
+  sessionStorage.setItem("option", e.target.value);
+});
+
+if (sessionStorage.getItem("text")) {
+  text.value = sessionStorage.getItem("text");
+}
+if (sessionStorage.getItem("email")) {
+  email.value = sessionStorage.getItem("email");
+}
+if (sessionStorage.getItem("number")) {
+  number.value = sessionStorage.getItem("number");
+}
+if (sessionStorage.getItem("option")) {
+  options.value = sessionStorage.getItem("option");
+}
+*/
+
+//!challenge L:104
+/*
+document.forms[0].onsubmit = function (e) {
+  e.preventDefault();
+};
+
+let form = document.querySelector(".form");
+let input = document.querySelector(".input");
+let submit = document.querySelector(".add");
+let tasks = document.querySelector(".tasks");
+let delall = document.querySelector(".delall");
+// array
+let arrayOfTasks = [];
+//check local
+if (localStorage.getItem("tasks")) {
+  arrayOfTasks = JSON.parse(localStorage.getItem("tasks"));
+}
+// get form local
+getLocal();
+// add task
+submit.addEventListener("click", () => {
+  if (input.value !== "") {
+    addTaskToArray(input.value); // add task to array
+    input.value = ""; // empty input field
+  }
+});
+
+function addTaskToArray(taskText) {
+  // task data
+  const task = {
+    id: Date.now(),
+    title: taskText,
+    completed: false,
+  };
+  //push task to array
+  arrayOfTasks.push(task);
+  // add element to page
+  addElements(arrayOfTasks);
+  // add task to localStorage
+  addLocal(arrayOfTasks);
+}
+function addElements(arrayOfTasks) {
+  // empty
+  tasks.innerHTML = "";
+  // looping on array
+  arrayOfTasks.forEach((task) => {
+    //create main div
+    let div = document.createElement("div");
+    div.className = "task";
+    // check if task is done
+    if (task.completed) {
+      div.className = "task done";
+    }
+    div.setAttribute("data-id", task.id);
+    let p = document.createElement("p");
+    p.innerHTML = task.title;
+    p.classList.add("par");
+    div.appendChild(p);
+    //create delete button
+    let span = document.createElement("span");
+    span.className = "delete";
+    span.classList.add("button");
+    span.appendChild(document.createTextNode("delete"));
+    // append btn to div
+    div.appendChild(span);
+    // add task to container
+    tasks.appendChild(div);
+  });
+}
+
+//! Deleting
+
+tasks.addEventListener("click", (e) => {
+  //delete btn
+  if (e.target.classList.contains("delete")) {
+    //remove form local
+    removeLocal(e.target.parentElement.getAttribute("data-id"));
+    //remove task from list
+    e.target.parentElement.remove();
+  }
+  if (e.target.classList.contains("task")) {
+    toggleLocal(e.target.getAttribute("data-id"));
+    e.target.classList.toggle("done");
+  }
+});
+delall.addEventListener("click", () => {
+  localStorage.removeItem("tasks");
+  tasks.innerHTML = "";
+  arrayOfTasks = [];
+});
+
+function addLocal(arrayOfTasks) {
+  localStorage.setItem("tasks", JSON.stringify(arrayOfTasks));
+}
+function getLocal() {
+  let data = localStorage.getItem("tasks");
+  if (data) {
+    let tasks = JSON.parse(data);
+    addElements(tasks);
+  }
+}
+function removeLocal(taskId) {
+  arrayOfTasks = arrayOfTasks.filter((task) => task.id != taskId);
+  addLocal(arrayOfTasks);
+}
+function toggleLocal(taskId) {
+  arrayOfTasks.forEach((task) => {
+    if (task.id == taskId) {
+      task.completed === false
+        ? (task.completed = true)
+        : (task.completed = false);
+    }
+  });
+  addLocal(arrayOfTasks);
+}
+*/
+
+//* destructing
+/*
+let a = 1;
+let b = 2;
+let c = 3;
+let d = 4;
+let myFriends = ["ahmed", "Ali", "Osama", "sameh"];
+[a = "sarah", b, , d, e] = myFriends;
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+console.log(e);
+console.log(myFriends[5]);
+*/
+
+//*destructing
+///////////////////////////////////////////////////////////////////////
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+//todo // // // // // // // // // // // // // // //
+//! ما تضيعش وقت في حاجة مش عارفها
+//* لان في كتير لسه ما اتعلموش محتاج تتعلمه الأول
+//?  // // // // // // // // // // // // // // //
+
+//! when you finish
+//! 1/ repeat the course and see practice playlist
+//! 2/jonas course
+//! 3/go to MDN documents....>>> important....>>>
