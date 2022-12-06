@@ -71,3 +71,45 @@ h6,
 p {
   margin: 0;
 }
+.note {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: black;
+  padding: 10px;
+  animation: color 2s infinite linear;
+  -webkit-animation: color 2s infinite linear;
+}
+.note:nth-of-type(2),
+.note:nth-of-type(4) {
+  font-size: 15px;
+  animation: color2 2s infinite linear;
+  -webkit-animation: color2 2s infinite linear;
+}
+
+@keyframes color {
+  0%,
+  100% {
+    background-color: rgb(245, 79, 79);
+  }
+  33% {
+    background-color: rgb(255, 147, 6);
+  }
+  66% {
+    background-color: #2196f3;
+  }
+}
+@keyframes color2 {
+  0%,
+  100% {
+    background-color: rgb(238, 225, 225);
+  }
+  33% {
+    background-color: rgb(255, 251, 6);
+  }
+  66% {
+    background-color: #008f1f;
+  }
+}
+/* ------------------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------- */

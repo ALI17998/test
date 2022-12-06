@@ -3010,6 +3010,7 @@ function toggleLocal(taskId) {
 */
 
 //* destructing
+//todo arrays
 /*
 let a = 1;
 let b = 2;
@@ -3024,12 +3025,953 @@ console.log(d);
 console.log(e);
 console.log(myFriends[5]);
 */
-
-//*destructing
-///////////////////////////////////////////////////////////////////////
 /*
+let myFriends = [
+  "ahmed",
+  "Ali",
+  "Osama",
+  "sameh",
+  ["shady", "john", ["mohamed", "gamal"]],
+];
 
+//? console.log(myFriends[4][2][1]);
 
+let [, , , , [a, , [, b]]] = myFriends;
+console.log(a);
+console.log(b);
+*/
+
+//?swapping
+// let book = "video";
+// let video = "book";
+// //save book value in stash
+// let stash = book; //video
+// //change book value
+// book = video; //book
+// //change video value
+// video = stash;
+// console.log(book, video);
+//?with destructing
+// [book, video] = [video, book];    // = ["book","video"]
+// console.log(book);
+// console.log(video);
+
+//todo objects
+// const user = {
+//   theName: "ali",
+//   theAge: 25,
+//   theTitle: "Developer",
+//   theCountry: "Egypt",
+// };
+//?
+// console.log(user.theName);
+// console.log(user.theAge);
+// console.log(user.theTitle);
+// console.log(user.theCountry);
+//?
+// let theName = user.theName;
+// let theAge = user.theAge;
+// let theTitle = user.theTitle;
+// let theCountry = user.theCountry;
+
+// console.log(theName);
+// console.log(theAge);
+// console.log(theTitle);
+// console.log(theCountry);
+//?
+
+// ({theName,theAge,theTitle,theCountry}=user);
+// let { theName, theAge, theTitle, theCountry } = user;
+// let { theName, theAge, theCountry } = user;
+
+// console.log(theName);
+// console.log(theAge);
+// console.log(theTitle);
+// console.log(theCountry);
+//?
+// const user = {
+//   theName: "ali",
+//   theAge: 25,
+//   theTitle: "Developer",
+//   theCountry: "Egypt",
+//   skills: {
+//     html: 60,
+//     css: 70,
+//   },
+// };
+// const {
+//   theName: n,
+//   theAge: a,
+//   theCountry,
+//   theColor: co = "red",
+//   skills: { html, css: cs },
+// } = user;
+// console.log(n);
+// console.log(a);
+// console.log(theCountry);
+// console.log(theColor);
+// console.log(co);
+// console.log(html);
+// console.log(cs);
+//? destruct only the nested object {skills}
+// const { html: skillOne, cs: skillTwo } = user.skills;
+// console.log(html, cs);
+
+//todo  functions
+// const user = {
+//   theName: "ali",
+//   theAge: 25,
+//   theTitle: "Developer",
+//   theCountry: "Egypt",
+//   skills: {
+//     html: 60,
+//     css: 70,
+//   },
+// };
+// showDetails(user);
+// function showDetails(obj) {
+//   console.log(`your name is ${obj.theName}`);
+//   console.log(`your name is ${obj.theAge}`);
+//   console.log(`your name is ${obj.skills.html}`);
+// }
+// function showDetails({ theName: na, theAge: ag, skills: { css } } = user) {
+//   console.log(`your name is ${na}`);
+//   console.log(`your age is ${ag}`);
+//   console.log(`your css is ${css}`);
+// }
+
+//todo mixed content
+
+// const user = {
+//   theName: "ali",
+//   theAge: 25,
+//   skills: ["html", "css", "Js"],
+//   addresses: {
+//     egypt: "cairo",
+//     Ksa: "Riyadh",
+//   },
+//   test: ["ahmed", { name: "ali", age: 25 }],
+// };
+
+// const {
+//   theName: n,
+//   theAge: g,
+//   skills: [one, , three],
+//   addresses: { egypt: e },
+//   test: [first, { name: na }],
+// } = user;
+// console.log(n);
+// console.log(g);
+// console.log(one, three);
+// console.log(e);
+// console.log(first);
+// console.log(na);
+
+//*end destructing
+
+//! destructuring assignments
+
+//todo: Assignment one
+
+// let myNumbers = [1, 2, 3, 4, 5];
+// [a, , , , e] = myNumbers;
+// console.log(a * e);
+
+//todo: Assignment two
+// let mySkills = [
+//   "HTML",
+//   "CSS",
+//   "JavaScript",
+//   ["PHP", "Python", ["Django", "Laravel"]],
+// ];
+
+// [a, b, c, [d, e, [f, g]]] = mySkills;
+
+// console.log(`My Skills: ${a}, ${b}, ${c}, ${d}, ${e}, ${f}, ${g}`);
+
+//todo: Assignment three
+// let arr1 = ["Ahmed", "Sameh", "Sayed"];
+// let arr2 = ["Mohamed", "Gamal", "Amir"];
+// let arr3 = ["Haytham", "Shady", "Mahmoud"];
+
+// let allArr = arr1.concat(arr2, arr3);
+
+// console.log(allArr.sort().reverse());
+// let [a, , , b, , , , , c] = allArr;
+// console.log(`My Best Friends: ${a}, ${b}, ${c}`);
+
+//todo: Assignment four
+
+// const member = {
+//   age: 30,
+//   working: false,
+//   country: "Egypt",
+//   hobbies: ["Reading", "Swimming", "Programming"],
+// };
+
+// const {
+//   age: a,
+//   working: w,
+//   country: c,
+//   hobbies: [h1, , h3],
+// } = member;
+
+// console.log(`My Age Is ${a} And Iam ${w ? "" : "Not"} Working`);
+
+// console.log(`I Live in ${c}`);
+
+// console.log(`My Hobbies: ${h1} And ${h3}`);
+
+// My Hobbies: Reading And Programming
+
+//todo: Assignment five
+
+// const game = {
+//   title: "YS",
+//   developer: "Falcom",
+//   releases: {
+//     "Oath In Felghana": ["USA", "Japan"],
+//     "Ark Of Napishtim": {
+//       US: "20 USD",
+//       JAP: "10 USD",
+//     },
+//     Origin: "30 USD",
+//   },
+// };
+// const { title: t, developer: d, releases } = game;
+// const [o, a] = Object.keys(releases);
+// const [[u, j], { US: u_price, JAP: j_price }, or] = Object.values(releases);
+
+// console.log(`My Favourite Games Style Is ${t} Style`);
+
+// console.log(`And I Love ${d} Games`);
+
+// console.log(`My Best Release Is ${o} It Released in ${u} & ${j}`);
+
+// console.log(`Although I Love ${a}`);
+
+// console.log(`${a} Price in USA Is ${u_price}`);
+
+// console.log(`${a} Price in Japan Is ${j_price}`);
+
+// console.log(`Origin Price Is ${or}`);
+
+//todo: Assignment six
+/*
+let chosen = 2;
+
+let myFriends = [
+  { title: "Osama", age: 39, available: true, skills: ["HTML", "CSS"] },
+  { title: "Ahmed", age: 25, available: false, skills: ["Python", "Django"] },
+  { title: "Sayed", age: 33, available: true, skills: ["PHP", "Laravel"] },
+];
+
+if (chosen === 3) {
+  const [
+    ,
+    ,
+    {
+      title,
+      age,
+      available: a,
+      skills: [, two],
+    },
+  ] = myFriends;
+  console.log(title);
+  console.log(age);
+  console.log(`${a ? "available" : "not available"}`);
+  console.log(two);
+}
+if (chosen === 2) {
+  const [
+    ,
+    {
+      title,
+      age,
+      available: a,
+      skills: [, two],
+    },
+    ,
+  ] = myFriends;
+  console.log(title);
+  console.log(age);
+  console.log(`${a ? "available" : "not available"}`);
+  console.log(two);
+}
+if (chosen === 1) {
+  const [
+    {
+      title,
+      age,
+      available: a,
+      skills: [, two],
+    },
+    ,
+    ,
+  ] = myFriends;
+  console.log(title);
+  console.log(age);
+  console.log(`${a ? "available" : "not available"}`);
+  console.log(two);
+}
+*/
+
+//! set data type
+/*
+let myData = [1, 1, 1, 2, 3];
+// let myNewSet = new Set(myData);
+// let myNewSet = new Set([1,1,1,2,3]);
+let myNewSet = new Set().add(1).add(1).add(1).add(2).add(3);
+console.log(myNewSet);
+console.log(myNewSet.size);
+console.log(myNewSet[0]); // undefined
+console.log(myNewSet.has(1));
+myNewSet.delete(2);
+console.log(myNewSet.delete(2)); //? check if the element exists >> will return true if exist and false if not
+myNewSet.clear();
+console.log(myNewSet);
+*/
+
+//! Weak Set And Garbage Collector
+//? differences between it and set ? >>>
+// Set     => Can Store Any Data Values
+// WeakSet => Collection Of Objects Only
+// --
+// Set     => Have Size Property
+// WeakSet => Does Not Have Size Property
+// --
+// Set     => Have Keys, Values, Entries
+// WeakSet => Does Not Have clear, Keys, Values And Entries
+// --
+// Set     => Can Use forEach
+// WeakSet => Cannot Use forEach
+
+// Usage: Store objects and removes them once they become inaccessible
+/*
+let mySet = new Set([1, 1, 1, 2, 3, "A", "A"]);
+console.log(mySet);
+console.log(`size of elements inside set is ${mySet.size}`);
+let iterator = mySet.keys(); // keys is alias for values
+console.log(iterator.next().value);
+console.log(iterator.next().value);
+console.log(iterator.next().value);
+console.log(iterator.next().value);
+console.log(iterator.next());
+
+let myWs = new WeakSet([{ A: 1, B: 2, C: 3 }]);
+console.log(myWs);
+*/
+
+//! Map Date Type
+//? maps vs objects >>>
+// ------ Map => Does Not Contain Key By Default
+// ------ Object => Has Default Keys
+// --
+// ------ Map => Key Can Be Anything [Function, Object, Any Primitive Data Types]
+// ------ Object => String Or Symbol
+// --
+// ------ Map => Ordered By Insertion
+// ------ Object => Not 100% Till Now
+// --
+// ------ Map => Get Items By Size
+// ------ Object => Need To Do Manually
+// --
+// ------ Map => Can Be Directly Iterated
+// ------ Object => Not Directly And Need To Use Object.keys() And So On
+// --
+// ------ Map => Better Performance When Add Or Remove Data
+// ------ Object => Low Performance When Comparing To Map
+/*
+let myObject = {};
+let myEmptyObject = Object.create(null);
+let myMap = new Map();
+
+console.log(myObject);
+console.log(myEmptyObject);
+console.log(myMap);
+let myNewObject = {
+  10: "Number",
+  "10": "String",
+};
+
+console.log(myNewObject[10]);
+
+let myNewMap = new Map();
+myNewMap.set(10, "Number");
+myNewMap.set("10", "String");
+myNewMap.set(true, "Boolean");
+myNewMap.set({a: 1, b: 2}, "Object");
+myNewMap.set(function doSomething() {}, "Function");
+
+console.log(myNewMap.get(10));
+console.log(myNewMap.get("10"));
+
+console.log("####");
+
+console.log(myNewObject);
+console.log(myNewMap);
+*/
+//* map methods
+/*
+let myMap = new Map([
+  [20, "ali"],
+  [false, "boolean"],
+  ["same", "none"],
+]);
+myMap.set(10, "number");
+myMap.set("name", "string");
+console.log(myMap);
+console.log(myMap.get(10));
+console.log(myMap.get("name"));
+console.log(myMap.size);
+console.log(myMap.has(false));
+console.log(myMap.delete("name"));
+myMap.clear();
+*/
+
+//! weak map .. >> key can only be object
+/*
+let mapUser = { theName: "ali" };
+let myMap = new Map();
+myMap.set(mapUser, "object value");
+mapUser = null;
+console.log(myMap);
+console.log("-------------------------------------");
+let wMapUser = { theName: "ali" };
+let myWMap = new WeakMap();
+myWMap.set(wMapUser, "object value");
+wMapUser = null;
+console.log(myWMap);
+*/
+
+//! array advanced methods
+
+//todo: array from
+/*
+console.log(Array.from("sameh"));
+console.log(Array.from("12345", (n) => +n + +n));
+
+let myArray = [1, 1, 1, 2, 3, 4];
+let mySet = new Set(myArray);
+console.log(Array.from(mySet));
+console.log([...new Set(myArray)]); // future
+
+function af() {
+  return Array.from(arguments);
+}
+console.log(af("ali", "sameh", "ahmed",1,2,3));
+*/
+
+//todo: array copyWithin
+
+// let myArray = [10, 20, 30, 40, 50, "A", "b"];
+
+// myArray.copyWithin(3); //[10, 20, 30, 10, 20, 30,40]
+// myArray.copyWithin(4, 6); //[10, 20, 30, 40, 'b', 'A', 'b']
+// myArray.copyWithin(4, -1); //[10, 20, 30, 40, 'b', 'A', 'b']
+// myArray.copyWithin(1, -2); //[10, 'A', 'b', 40, 50, 'A', 'b']
+// myArray.copyWithin(1, -2, -1); //[10, 'A', 30, 40, 50, 'A', 'b']
+// console.log(myArray);
+
+//todo: array some
+/*
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let myNumber = 10;
+// let check = nums.some(function (e) {
+//   return e < 5;
+// });
+let check = nums.some(function (e) {
+  return e < this; //* this is myNumber
+}, myNumber);
+console.log(check); // true
+
+function checkValues(arr, val) {
+  return arr.some((e) => e === val);
+}
+console.log(checkValues(nums, 20)); //false
+console.log(checkValues(nums, 5)); //true
+
+let range = {
+  min: 10,
+  max: 20,
+};
+let checkRange = nums.some(function (e) {
+  return e >= this.min && e <= this.max;
+}, range);
+console.log(checkRange);
+*/
+
+//todo: array every  >>  all elements must meet the condition
+/*
+const locations = {
+  20: "Place 1",
+  30: "Place 2",
+  10: "Place 3",
+  40: "Place 4",
+};
+let locationNum = Object.keys(locations).map((n) => +n); // map to convert strings to numbers
+let mainLocation = 15;
+let mainLocation2 = 5;
+function checkValues(arr, val) {
+  return arr.every((e) => e > val);
+}
+console.log(checkValues(locationNum, mainLocation)); //false
+console.log(checkValues(locationNum, mainLocation2)); //true
+*/
+
+//todo: spread syntax and use cases
+/*
+//* spread with string => expand string
+
+console.log("osama");
+console.log(..."osama");
+console.log([..."osama"]);
+
+//* concatenate arrays
+
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+let arrAll = [...arr1, ...arr2];
+console.log(arrAll);
+console.log(arr1.concat(arr2));
+
+//*  copy array
+
+let copyArr = [...arr1];
+console.log(copyArr);
+
+//*  push inside array
+
+let allFriends = ["ali", "ahmed", "osama"];
+let newFriends = ["mohamed", "mostafa"];
+allFriends.push(...newFriends);
+console.log(allFriends);
+
+//*  use with math object
+
+let myNums = [10, 20, 30, 40];
+console.log(Math.max(...myNums));
+
+//*  spread with objects => merge objects
+
+let obj1 = {
+  a: 1,
+  b: 2,
+};
+let obj2 = {
+  c: 1,
+  d: 2,
+};
+console.log({ ...obj1, ...obj2, f: 5 });
+*/
+
+//! assignments 123 - 133
+
+//todo>> assignment one
+/*
+setOfNumbers = new Set().add(10);
+setOfNumbers.add(20).add(setOfNumbers.size);
+console.log(setOfNumbers);
+//get last element
+let [, , last] = setOfNumbers;
+console.log(last);
+// get last element >>> note that converting set to array is  inefficient and slow if you have thousands of elements
+console.log([...setOfNumbers][2]);
+// get last element
+console.log([...setOfNumbers].pop());
+// get first element
+values = setOfNumbers.values();
+console.log(values.next().value);
+*/
+//todo>> assignment two
+/*
+let myFriends = ["Osama", "Ahmed", "Sayed", "Sayed", "Mahmoud", "Osama"];
+
+console.log([...new Set(myFriends)].sort());
+*/
+
+//todo>> assignment three
+/*
+let myInfo = {
+  username: "Osama",
+  role: "Admin",
+  country: "Egypt",
+};
+
+console.log(new Map(Object.entries(myInfo)));
+console.log(new Map(Object.entries(myInfo)).size);
+console.log(new Map(Object.entries(myInfo)).has("role"));
+*/
+//todo>> assignment four
+/*
+let theNumber = 100020003000;
+
+console.log(+[...new Set(theNumber.toString())].sort().join(""));
+*/
+//todo>> assignment five
+
+let theName = "Elzero";
+/*
+//method 1
+console.log(Array.from(theName));
+//method 2
+console.log([...theName]);
+//method 3
+console.log(theName.split(""));
+//method 4
+console.log(Object.values(theName));
+//method 5
+console.log(new Set(theName));
+*/
+//todo>> assignment six
+//! challenge
+// let arr1 = ["A", "B", "C", "D", "E", 10, 20, 6];
+// let arr2 = ["Z", "Y", "A", "D", "E", 10, 1];
+// let arr3 = ["A", "B", "C", 20, "D", "E", 10, 15, 6];
+// let arr4 = [8, "A", "B", 30, "C", 20, 90, "D", 10, "Z", "H", 6];
+
+// function check(arr) {
+//   let count = 0;
+// //*method one
+// for (let i = 0; i < arr.length; i++) {
+//   if (typeof arr[i] === "number") {
+//     count++;
+//     arr.unshift(arr[i]);
+//     arr.splice(i + 1, 1);
+//   }
+// }
+// for (let j = 0; j < arr.length; j++) {
+//   if (typeof arr[j] === "string") {
+//     arr.copyWithin(0, j, j + count);
+//     break;
+//   }
+// }
+//*method 2
+//   for (let i = 0; i < arr.length; i++) {
+//     if (typeof arr[i] === "number") {
+//       count++;
+//       arr.unshift(...arr.splice(i, 1));
+//     }
+//   }
+//   let IndexChar = arr.findIndex((e) => typeof e === "string");
+//   arr.copyWithin(0, IndexChar, IndexChar + count);
+
+//   console.log(arr);
+// }
+// check(arr1);
+
+//todo>> assignment seven
+/*
+let numsOne = [1, 2, 3];
+let numsTwo = [4, 5, 6];
+
+console.log(numsOne.concat(numsTwo));
+console.log([...numsOne, ...numsTwo]);
+numsOne.push(...numsTwo);
+console.log(numsOne);
+*/
+//todo>> assignment eight
+//!challenge for L:133.
+/*
+let n1 = [10, 30, 10, 20];
+let n2 = [30, 20, 10];
+
+console.log(Math.max(...n1) * [...n1, ...n2].length); // Needed Output 210
+*/
+
+//todo>>: Regular Expression
+//! modifiers >>
+//* i => case-insensitive
+//* g => global
+//* m => Multilines
+/*
+let myString = "Hello Elzero Web School I Love elzero";
+let regex = /elzero/;
+console.log(myString.match(regex));
+console.log(myString.match(/elzero/i));
+console.log(myString.match(/elzero/gi));
+console.log(myString.match(/Elzero/m));
+//other way to type regexp
+let ali = new RegExp("elzero", "ig");
+console.log(myString.match(ali));
+*/
+
+//?Range
+/*
+let tld = "Com Not Org Info Code Io";
+let tldRe = /(org|info|io)/gi;
+console.log(tld.match(tldRe));
+
+let nums = "12345678910";
+
+let numsRe = /[0-9]/;
+console.log(nums.match(numsRe)); // will get only first match
+
+let numsRe2 = /[0-2]/g;
+console.log(nums.match(numsRe2)); // all range
+
+let numsNotRe = /[^0-2]/g; // all except range [0-2]
+console.log(nums.match(numsNotRe));
+
+let specialNums = "1/2@3#4$5%678910";
+let notNsRe = /[^0-9]/g; // get only special characters
+console.log(specialNums.match(notNsRe));
+
+let practice = "Os1 Os1Os Os2 Os8 Os8os";
+let practiceRe = /Os[5-9]os/g;
+console.log(practice.match(practiceRe));
+*/
+/*
+let myString = "AaBbcCdefG123!234%^&*";
+
+let atozSmall = /[a-z]/g;
+console.log(myString.match(atozSmall));
+
+let exatozSmall = /[^a-z]/g;
+console.log(myString.match(exatozSmall));
+
+let atozcap = /[A-Z]/g;
+console.log(myString.match(atozcap));
+
+let exatozcap = /[^A-Z]/g;
+console.log(myString.match(exatozcap));
+
+let abc = /[abc]/g;
+console.log(myString.match(abc));
+
+let exabc = /[^abc]/g;
+console.log(myString.match(exabc));
+
+let test1 = /[a-zA-Z]/g;
+console.log(myString.match(test1));
+
+let test2 = /[^a-zA-Z]/g;
+console.log(myString.match(test2));
+
+let test3 = /[^a-zA-Z0-9]/g;
+console.log(myString.match(test3));
+*/
+//!   Character Classes
+// . => matches any character, except newline or other line terminators.
+// \w => matches word characters. [a-z, A-Z, 0-9 And Underscore]
+// \W => matches Non word characters
+// \d => matches digits from 0 to 9.
+// \D => matches non-digit characters.
+// \s => matches whitespace character.
+// \S => matches non whitespace character.
+// \b => matches at the beginning or end of a word.
+// \B => matches NOT at the beginning/end of a word.
+/*
+let email = "O@@@g...com O@g.com O@g.net A@Y.com O-g.com o@s.org 1@1.com";
+let dot = /./g;
+let word = /\w/g;
+let valid = /\w@\w.(com|net)/g;
+console.log(email.match(dot));
+console.log(email.match(word));
+console.log(email.match(valid));
+*/
+/*
+let names = "Sayed 1Spam 2Spam 3Spam Spam4 Spam5 Osama Ahmed Aspamo";
+let re = /spam/gi;
+let re2 = /(\bspam|spam\b)/gi;
+
+console.log(names.match(re));
+console.log(names.match(re2));
+
+console.log(re.test(names));
+console.log(/(\bspam|spam\b)/gi.test("Osama"));
+console.log(/(\bspam|spam\b)/gi.test("1Spam"));
+console.log(/(\bspam|spam\b)/gi.test("Spam1"));
+*/
+
+//!Quantifiers
+/*
+  n+    => One Or More
+  n*    => zero or more
+  n?    => zero or one
+  n{x}   => Number of
+  n{x,y} => Range
+  n{x,}  => At Least x
+  $  => End With Something
+  ^  => Start With Something
+  ?= => Followed By Something
+  ?! => Not Followed By Something
+*/
+/*
+let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru";
+let mailsRe = /\w+@\w+.(sa|com)/gi;
+let mailsRe2 = /\w+@\w+.\w/gi;
+console.log(mails.match(mailsRe));
+console.log(mails.match(mailsRe2));
+
+let nums = "0110 10 150 05120 0560 350 00"; // 0 Numbers Or No 0
+let numsRe = /0\d*0/gi;
+console.log(nums.match(numsRe));
+
+let urls = "https://google.com http://www.website.net web.com";
+let urlsRe = /(https?:\/\/)?(www.)?\w+.(com|net)?/gi;
+console.log(urls.match(urlsRe));
+*/
+/*
+let serials = "S100S S3000S S50000S S950000S";
+
+console.log(serials.match(/s\d{3}s/gi)); // S[Three Number]S
+console.log(serials.match(/s\d{4,5}s/gi)); // S[Four Or Five Number]S
+console.log(serials.match(/s\d{4,}s/gi)); // S[At Least Four]S
+*/
+/*
+let myString = "We Love Programming";
+let names = "1OsamaZ 2AhmedZ 3Mohammed 4MoustafaZ 5GamalZ";
+
+console.log(/ing$/gi.test(myString));
+console.log(/^we/gi.test(myString));
+console.log(/lz$/gi.test(names));
+console.log(/^\d/gi.test(names));
+
+console.log(names.match(/\d\w{5}(?=Z)/gi));
+console.log(names.match(/\d\w{8}(?!Z)/gi));
+*/
+/*
+//? replace
+//? replaceAll
+let txt = "We Love Programming And @ Because @ Is Amazing";
+console.log(txt.replace("@", "JavaScript"));
+console.log(txt.replaceAll("@", "JavaScript"));
+//?  with regex
+let re = /@/gi;
+console.log(txt.replace(re, "JavaScript"));
+console.log(txt.replaceAll(/@/gi, "JavaScript"));
+*/
+
+//* Input Form Validation Practice >>
+/*
+document.getElementById("register").onsubmit = function () {
+  let phoneInput = document.getElementById("phone").value;
+  let phoneRe = /\(\d{4}\)\s\d{3}-\d{4}/; // (1234) 567-8910
+  let validationResult = phoneRe.test(phoneInput);
+  // console.log(validationResult);
+  // return false;
+  if (validationResult === false) {
+    return false; // form won't send data
+  }
+  return true; // form will send data
+};
+*/
+//! assignments 134 - 146
+
+//todo: assignment one
+/*
+let ip = "2001:db8:3333:4444:5555:6666:7777:8888";
+console.log(ip.match(/(\w|:)+/gi));
+console.log(ip.match(/^(\d{4}:\w{2}\d:(\d{4}|:){11})$/gi));
+*/
+//todo: assignment two
+/*
+let specialNames = "Os10O OsO Os100O Osa100O Os1000 Os100m";
+let regex = /\bos\d*o\b/gi;
+console.log(specialNames.match(regex));
+*/
+//todo: assignment three
+/*
+let phone = "+(995)-123 (4567)";
+console.log(phone.match(/\+\(\d{3}\)-\d{3}\s\(\d{4}\)/gi));
+*/
+//todo: assignment four
+// let re = /https?:\/\/(?:[-\w]+\.)?([-\w]+)\.\w+(?:\.\w+)?\/?.*/i;
+
+//todo: assignment five
+/*
+let date1 = "25/10/1982";
+let date2 = "25 - 10 - 1982";
+let date3 = "25 10 1982";
+let date4 = "25 10 82";
+
+let re = /^(\d{2})(\s?)+(\/|-)?(\s?)+(\d{2})(\s?)+(\/|-)?(\s?)+\d{2,4}$/gi;
+
+console.log(date1.match(re)); // "25/10/1982"
+console.log(date2.match(re)); // "25 - 10 - 1982"
+console.log(date3.match(re)); // "25 10 1982"
+console.log(date4.match(re)); // "25 10 82"
+*/
+//todo: assignment six
+/*
+let url1 = "elzero.org";
+let url2 = "http://elzero.com";
+let url3 = "https://elzero.net";
+let url4 = "https://www.elzero.edu";
+let url5 = "https://www.elzero.org:8080/articles.php?id=100&cat=topics";
+let re =
+  /(https?:\/\/)?(www\.)?(\w+)\.(org|net|com|edu):?(\d{4}\/\w+\.php\?id=\d+&\w+=\w+)?/gi;
+console.log(url1.match(re));
+console.log(url2.match(re));
+console.log(url3.match(re));
+console.log(url4.match(re));
+console.log(url5.match(re));
+*/
+
+//! object oriented programming >>
+
+//? constructor function :
+//* Constructor Function
+
+// function User(id, username, salary) {
+//   this.i = id;
+//   this.u = username;
+//   this.s = salary + 1000;
+// }
+
+// let userOne = new User(100, "Elzero", 5000);
+// let userTwo = new User(101, "Hassan", 6000);
+// let userThree = new User(102, "Sayed", 7000);
+
+// console.log(userOne.i);
+// console.log(userOne.u);
+// console.log(userOne.s);
+
+// console.log(userTwo.i);
+// console.log(userTwo.u);
+// console.log(userTwo.s);
+
+// console.log(userThree.i);
+// console.log(userThree.u);
+// console.log(userThree.s);
+
+// const userOne = {
+//   id: 100,
+//   username: "Elzero",
+//   salary: 5000,
+// };
+
+// const userTwo = {
+//   id: 101,
+//   username: "Hassan",
+//   salary: 6000,
+// };
+
+// const userThree = {
+//   id: 102,
+//   username: "Sayed",
+//   salary: 7000,
+// };
+/*
+class User {
+  constructor(id, username, salary) {
+    this.i = id;
+    this.u = username;
+    this.s = salary + 1000;
+  }
+}
+let userOne = new User(10, "ali", 2000);
+console.log(userOne.i);
+console.log(userOne.u);
+console.log(userOne.s);
+console.log(userOne instanceof User); // true
+console.log(userOne.constructor === User); //true
+*/
+
+///////////////////////////////////////////////////////////////////
+
+/*
 
 
 
