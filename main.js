@@ -5130,4 +5130,3 @@ Request.onreadystatechange = function () {
 //! 3/go to MDN documents....>>> important....>>>
 //! 4/roadmap website ....>>> important....>>>
 
-console.log("welcome to codespaces");
