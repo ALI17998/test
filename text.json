@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "writer": "ali",
+    "category": "fantasy",
+    "title": "one"
+  },
+  {
+    "id": "2",
+    "writer": "ahmed",
+    "category": "action",
+    "title": "two"
+  },
+  {
+    "id": "3",
+    "writer": "osama",
+    "category": "comedy",
+    "title": "three"
+  }
+]

@@ -3953,24 +3953,1156 @@ console.log(url5.match(re));
 //   username: "Sayed",
 //   salary: 7000,
 // };
+
+//? new ECMA-6 to create obj
 /*
 class User {
   constructor(id, username, salary) {
+    //* properties
     this.i = id;
-    this.u = username;
-    this.s = salary + 1000;
+    this.u = username || "Unknown";
+    this.s = salary < 6000 ? salary + 500 : salary;
+    this.msg = function () {
+      return `Hello ${this.u} Your Salary Is ${this.s}`;
+    };
+  }
+  //* Mehods
+  WriteMsg() {
+    return `Hello ${this.u} Your Salary Is ${this.s}`;
   }
 }
-let userOne = new User(10, "ali", 2000);
-console.log(userOne.i);
-console.log(userOne.u);
-console.log(userOne.s);
+let userOne = new User(100, "", 7000);
+let usertwo = new User(101, "ahmed", 5000);
+//!
 console.log(userOne instanceof User); // true
 console.log(userOne.constructor === User); //true
+//!
+
+console.log(userOne.u);
+console.log(userOne.s);
+console.log(userOne.msg());
+console.log(userOne.WriteMsg());
+
+console.log(usertwo.u);
+console.log(usertwo.s);
+console.log(usertwo.msg); //! msg without () will show native code
+console.log(usertwo.WriteMsg); //! msg without () will show native code
+*/
+/*
+class User {
+  constructor(id, username, salary) {
+    //* properties
+    this.i = id;
+    this.u = username || "Unknown";
+    this.s = salary < 6000 ? salary + 500 : salary;
+  }
+  //* Mehods
+  updateName(newName) {
+    this.u = newName;
+  }
+}
+
+let userOne = new User(100, "ali", 7000);
+
+console.log(userOne.u);
+userOne.updateName("osama");
+console.log(userOne.u);
+
+let strOne = "elzero";
+let strtwo = new String("elzero");
+
+console.log(typeof strOne);
+console.log(typeof strtwo);
+//!
+console.log(strOne instanceof String);
+console.log(strtwo instanceof String);
+
+console.log(strOne.constructor === String);
+console.log(strtwo.constructor === String);
+//!
+*/
+//todo: static properties and methods:
+/*
+class User {
+  static count = 0;
+  constructor(id, username, salary) {
+    //* properties
+    this.i = id;
+    this.u = username || "Unknown";
+    this.s = salary < 6000 ? salary + 500 : salary;
+    User.count++;
+  }
+  //*static methods
+  static sayHello() {
+    return `hello`;
+  }
+  static countMemebers() {
+    return `${this.count} Members created`;
+  }
+}
+let userOne = new User(100, "ali", 7000);
+let usertwo = new User(101, "ahmed", 5000);
+let userthree = new User(101, "sameh", 5000);
+let userfour = new User(101, "osama", 5000);
+
+console.log(userOne.u);
+console.log(userOne.s);
+console.log(userOne.count);
+console.log(User.count);
+console.log(User.sayHello());
+console.log(userOne.sayHello());
+console.log(User.countMemebers());
+*/
+/*
+//? parent class
+class User {
+  constructor(id, userName) {
+    this.i = id;
+    this.u = userName;
+  }
+  sayHello() {
+    return `Hello ${this.u}`;
+  }
+}
+//? derived from parent class
+class Admin extends User {
+  constructor(id, userName, permissions) {
+    super(id, userName);
+    this.p = permissions;
+  }
+}
+//? derived from Admin class
+
+class boss extends Admin {
+  constructor(id, userName, permissions, ability) {
+    super(id, userName, permissions);
+    this.b = ability;
+  }
+}
+
+let userOne = new User(100, "Ali");
+let adminOne = new Admin(110, "sameh", 1);
+let bossOne = new boss(115, "osama", 1, "super");
+console.log(userOne.u);
+console.log(userOne.sayHello());
+console.log(adminOne.u);
+console.log(adminOne.p);
+console.log(bossOne.b);
 */
 
-///////////////////////////////////////////////////////////////////
+// todo: Encapsulation >>
+/*
+class User {
+  //*private property
+  #s;
+  constructor(id, userName, salary) {
+    this.i = id;
+    this.u = userName;
+    this.#s = salary;
+  }
+  getSalary() {
+    return parseInt(this.#s);
+  }
+}
+let userOne = new User(100, "ali", " 5000 dollar");
+console.log(userOne.u);
+console.log(userOne.getSalary() * 0.6);
 
+*/
+/*
+class User {
+  //*private property
+  #s;
+  constructor(id, userName, salary) {
+    this.i = id;
+    this.u = userName;
+    this.#s = salary;
+  }
+  getSalary() {
+    return parseInt(this.#s);
+  }
+}
+
+let userOne = new User(100, "ali", " 5000 dollar");
+let AdminOne = new Admin(110, "sameh", 10000, 0);
+console.log(userOne.u);
+console.log(userOne.getSalary() * 0.6);
+console.log(AdminOne.p);
+console.log(AdminOne.getSalary() * 0.6);
+*/
+//! protected property JS
+/*
+class NameGenerator {
+  _name;
+
+  constructor(name) {
+    this._name = name;
+  }
+
+  get name() {
+    return this._name;
+  }
+}
+
+let nameGenerator = new NameGenerator("John");
+console.log(`My name is ${nameGenerator.name}`);
+nameGenerator.name = "sameh"; // Cannot assign to 'name' because it is a read-only property.
+*/
+//todo: prototype >
+/*
+class User {
+  constructor(id, username) {
+    this.i = id;
+    this.u = username;
+  }
+  sayHello() {
+    return `Hello ${this.u}`;
+  }
+}
+
+let userOne = new User(100, "Elzero");
+console.log(userOne.u);
+console.log(userOne);
+console.log(User.prototype);
+
+User.prototype.sayWelcome = function () {
+  return `Welcome ${this.u}`;
+};
+
+Object.prototype.love = "I Love JS";
+
+String.prototype.addDots = function (value) {
+  return `..${this}..`;
+};
+let myString = "ahmed";
+*/
+
+//todo: object meta data and descriptor
+/*
+const myObject = {
+  a: 1,
+  b: 2,
+};
+Object.defineProperty(myObject, "c", {
+  writable: true,
+  enumerable: true,
+  configurable: true,
+  value: 3,
+});
+myObject.c = 100; // if writeable >> true . if false you cannot modify
+console.log(myObject);
+for (let prop in myObject) {
+  console.log(prop, ":", myObject[prop]); // c will not  be included if it is not enumerable
+}
+console.log(delete myObject.c); // if configurable false cannot delete or redefine
+console.log(myObject);
+*/
+/*
+const myObject = {
+  a: 1,
+  b: 2,
+};
+Object.defineProperties(myObject, {
+  c: {
+    configurable: true,
+    value: 3,
+  },
+  d: {
+    configurable: true,
+    value: 4,
+  },
+  e: {
+    configurable: true,
+    value: 5,
+  },
+});
+console.log(myObject);
+console.log(Object.getOwnPropertyDescriptor(myObject, "d"));
+console.log(Object.getOwnPropertyDescriptors(myObject));
+*/
+
+//! OOP Assignments
+
+//todo>> aasign one
+/*
+class Car {
+  constructor(name, model, price) {
+    this.n = name;
+    this.m = model;
+    this.p = price;
+  }
+  run(){
+    return `car is running`;
+  }
+  stop(){
+    return `car is stopped`;
+  }
+}
+
+let one = new Car("BMW",2022,20000)
+console.log(one)
+console.log(one.run());
+*/
+//todo>> aasign two
+/*
+class Phone {
+  constructor(name, serial, price) {
+    this.name = name;
+    this.serial = serial;
+    this.price = price;
+  }
+}
+
+class Tablet extends Phone {
+  constructor(name, serial, price, size) {
+    super(name, serial, price);
+    this.size = size || "Unknown";
+  }
+  fullDetails() {
+    return `${this.name} serial is ${this.serial} And size is ${this.size}`;
+  }
+}
+
+let TabletOne = new Tablet("iPad", 100200300, 1500, 12.9);
+let TabletTwo = new Tablet("Nokia", 350450650, 800, 10.5);
+let TabletThree = new Tablet("LG", 250450650, 650);
+console.log(`${TabletOne.fullDetails()}`);
+console.log(`${TabletTwo.fullDetails()}`);
+console.log(`${TabletThree.fullDetails()}`);
+*/
+//todo>> aasign three
+/*
+class User {
+  #c;
+  constructor(username, card) {
+    this.u = username;
+    this.#c = card;
+  }
+  get showData() {
+    return `your name is ${this.u} and your card number is ${this.#c
+      .toString()
+      .match(/\d{4}/g)
+      .join("-")}`;
+  }
+}
+// let regex = /^(\d{4}-){3}\d{4}$/gi;
+let regex = /^(\d{4}-)/gi;
+let ali = "1234567812345678";
+let newCard = ali.replaceAll("regex", 1);
+console.log(newCard);
+
+let userOne = new User("Osama", "1234-5678-1234-5678");
+let userTwo = new User("Ahmed", "1234567812345678");
+let userThree = new User("Ghareeb", 1234567812345678);
+
+console.log(userOne.showData);
+console.log(userTwo.showData);
+console.log(userThree.showData);
+console.log(userThree.c);
+*/
+//todo >> aasign four
+/*
+//*! don't run this code
+String.prototype.addLove = function () {
+  return `I love ${this} web school `;
+};
+*/
+
+// let myStr = "Elzero";
+// console.log(myStr.addLove());
+
+//todo >> aasign five
+/*
+const myObj = {
+  username: "Elzero",
+  id: 100,
+  score: 1000,
+  country: "Egypt",
+};
+
+Object.defineProperties(myObj, {
+  score: {
+    writable: false,
+  },
+  id: {
+    enumerable: false,
+  },
+  country: {
+    enumerable: false,
+  },
+});
+
+myObj.score = 500;
+
+for (let prop in myObj) {
+  console.log(`${prop} => ${myObj[prop]}`);
+}
+
+console.log(myObj);
+*/
+//! OOP Course {elzero web school}>>
+/*
+let ali = {
+  name:"ali",
+  "age":25,
+  1:"number",
+  country:"egypt",
+};
+let test = "country";
+console.log(ali.name); // dot notation
+console.log(ali.age);
+console.log(ali["name"]);  //bracket notation
+//* console.log(ali.1)  // cannot be number
+//* console.log(ali.test); //undefined
+//*console.log(ali[test])  // equal to >> ali["country"]
+*/
+////////////////////////////////////////
+/*
+let mainObj = {
+  hasDiscount: true,
+  showMsg(){
+    return `you ${this.hasDiscount ?"" :"don't"} have discount`;
+  }
+}
+console.log(mainObj.hasDiscount);
+console.log(mainObj.showMsg());
+
+let otherObj = Object.create(mainObj);  
+otherObj.hasDiscount = false;
+console.log(otherObj.hasDiscount);
+console.log(otherObj.showMsg());
+*/
+////////////////////////////////////////////
+/*
+const src1 = {
+  prop1: "value1",
+  prop2: "value2",
+  method1() {
+    return "method1";
+  },
+};
+const src2 = {
+  prop3: "value3",
+  prop4: "value4",
+  method2() {
+    return "method2";
+  },
+};
+const target = {
+  prop5:"value5",
+};
+Object.assign(target,src1,src2,{prop6:"value6"});
+console.log(target);
+
+const myObject = Object.assign({},target,{prop7:"value7"});  //* create new object with assign 
+console.log(myObject);
+*/
+/////////////////////////////////////////////////////
+/*
+const obj = { name: "ali", age: 25 };
+console.log(obj);
+console.log(obj.name);
+// delete obj;  //cannot delete obj
+delete obj.name;   // can delete property
+console.log(obj);
+console.log(obj.name);
+//*freeze
+const freezObj = Object.freeze({age:23});
+console.log(freezObj);
+console.log(freezObj.age);
+console.log(delete freezObj.age)
+//*
+const ali = {};
+Object.defineProperty(ali,"name",{
+  value:"ali",
+  enumerable:true,     // can be iterable
+  configurable:true,   // can be deleted
+  writable:true,       //can be redefined
+  
+})
+*/
+/////////////////////////////////////////////////////
+//* for in loop (loop through properties of the objects)
+/*
+const user = {
+  name: "ali",
+  country: "egypt",
+  age: 25,
+};
+let finalDate = "";
+for (let info in user) {
+  console.log(`the ${info} is => ${user[info]}`);
+  finalDate += `the ${info} is => ${user[info]}`;
+}
+console.log(finalDate);
+*/
+/////////////////////////////////////////////////////
+/*
+class User{
+  constructor(name,email){
+    this.name = name;
+    this.email = email;
+  }
+  sayHello(){
+    return `Hello ${this.name}`;
+  }
+  changeName(value){
+    this.name = value;
+  }
+  set changeEmail(value){
+    this.email = value;
+  }
+  get showInfo(){
+    return `Name: ${this.name}, Email ${this.email}`;
+  }
+}
+
+let user1 = new User("Ali","o@nn.sa");
+console.log(user1.name);
+console.log(user1.email);
+
+user1.changeName("ahmed");
+console.log(user1.name);
+user1.changeEmail = "ali@gmail.com";
+console.log(user1.email);
+console.log(user1.showInfo);
+*/
+
+//*! user of getter and setter
+/*
+//*todo: no one can change the date . read only.
+function Car () {
+  const fuel = 50
+  return {
+    get fuel () { return fuel } 
+  }
+}
+const car = Car() 
+car.fuel = 3000
+console.log(car.fuel) // 50
+
+//*todo: no on can exceed the limits while setting value
+function Car () {
+  let fuel = 50
+  return {
+    get fuel () { return fuel }, 
+    set fuel (value) {
+      fuel = value
+      if (value > 100) fuel = 100
+    }
+  }
+}
+
+const car = Car()
+car.fuel = 8000
+console.log(car.fuel) // 100
+*/
+
+//! date and time >>
+/*
+let dateNow = new Date();
+let birthday = new Date("sep 16, 98");
+let dateDiff = dateNow - birthday;
+
+console.log(dateDiff); // in milliseconds
+console.log(dateDiff/1000/60/60/24/365) // in years
+
+//*methods
+let days = ["sun","mon","thu","wed","thr","fri","sat"];
+console.log(dateNow.getTime()); // time in milliseconds from 1970 till now
+console.log(dateNow.getDate());  // day of the month 
+console.log(dateNow.getFullYear());
+console.log(dateNow.getMonth()); // return index..
+console.log(dateNow.getDay());  //day of the weeek return index .. first day is sun
+console.log(days[dateNow.getDay()]); 
+console.log(dateNow.getHours());
+console.log(dateNow.getMinutes());
+*/
+
+/*
+  Date And Time
+  - setTime(Milliseconds)
+  - setDate() => Day Of The Month [Negative And Positive]
+  - setFullYear(year, month => Optional [0-11], day => Optional [1-31])
+  - setMonth(Month [0-11], Day => Optional [1-31]) [Negative And Positive]
+  - setHours(Hours [0-23], Minutes => Optional [0-59], Seconds => Optional [0-59], MS => Optional [0-999])
+  - setMinutes(Minutes [0-59], Seconds => Optional [0-59], MS => Optional [0-999])
+  - setSeconds(Seconds => [0-59], MS => Optional [0-999])
+*/
+
+/*
+let dateNow = new Date();
+console.log(dateNow);
+
+dateNow.setTime(0); //Sets the date and time value in the Date object.
+console.log(dateNow);
+
+dateNow.setTime(10000); //10 sec
+console.log(dateNow);
+
+dateNow.setDate(1); // day - negative value get the past date
+console.log(dateNow);
+
+dateNow.setFullYear(2020,0); // year , month
+console.log(dateNow);
+*/
+//todo: formating date and time
+/*
+  Date And Time
+
+  new Date(timestamp)
+  new Date(Date String)
+  new Date(Numeric Values)
+
+  Format
+  - "Oct 25 1982"
+  - "10/25/1982"
+  - "1982-10-25" => ISO International Standard
+  - "1982 10"
+  - "1982"
+  - "82"
+  - 1982, 9, 25, 2, 10, 0
+  - 1982, 9, 25
+  - "1982-10-25T06:10:00Z"
+
+  Date.parse("String") // Read Date From A String
+*/
+/*
+console.log(Date.parse("Oct 25 1982"));
+
+let date1 = new Date(0);
+console.log(date1);
+
+let date2 = new Date(404344800000);
+console.log(date2);
+
+let date3 = new Date("10-25-1982");
+console.log(date3);
+
+let date4 = new Date("1982-10-25");
+console.log(date4);
+
+let date5 = new Date("1982-10");
+console.log(date5);
+
+let date6 = new Date("82");
+console.log(date6);
+
+let date7 = new Date(1982, 9, 25, 2, 10, 0);
+console.log(date7);
+
+let date8 = new Date(1982, 9, 25);
+console.log(date8);
+
+let date9 = new Date("1982-10-25T06:10:00Z");
+console.log(date9);
+*/
+
+//* tracking performance time
+
+// Search
+// - performance.now()
+// - performance.mark()
+/*
+// Start Time
+let start = new Date();
+
+// Operation
+for (let i = 0; i < 100000; i++) {
+  // document.write(`<div>${i}</div>`);
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(i));
+  document.body.appendChild(div);
+}
+
+// Time End
+let end = new Date();
+
+// Operation Duration
+let duration = end - start;
+
+console.log(duration);
+*/
+
+//todo: generators
+/*
+function* generateNumbers(){
+  yield 1;
+  yield 2;
+  yield 3;
+  yield 4;
+}
+let generator = generateNumbers();
+console.log(typeof generator);
+console.log(generator);
+
+console.log(generator.next());
+// console.log(generator.next().value);
+// console.log(generator.next().done);
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+
+for(let value of generateNumbers()){
+  console.log(value);
+}
+
+for(let value of generator){  // will not return cuz you yielded all the date 
+  console.log(value);
+}
+
+for(let value of generateNumbers()){  // will return date cuz it start from the function again
+  console.log(value);
+}
+*/
+
+//todo: Delegate Generator
+
+/*
+function* generateNums() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+function* generateLetters() {
+  yield "A";
+  yield "B";
+  yield "C";
+}
+
+function* generateAll(){
+  yield* generateNums();
+  yield* generateLetters();
+  yield [4,5,6];
+}
+
+let generator = generateAll();
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+
+console.log(generator.return("test"));  // stop the generator function & can put value
+
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+*/
+
+/*
+function* generateNumbers() {
+  // yield 1;
+  // yield 2;
+  // return "A";
+  // yield 3;
+  // yield 4;
+  let index = 0;
+
+  while (true) {
+    yield index++;
+  }
+}
+
+let generator = generateNumbers();
+
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+*/
+
+//! export and import________________________________________
+/*                                                           
+//*export process                                            
+let a = 10;                                                  
+let arr = [1, 2, 3, 4];                                      
+function saySomething() {
+  return `Something`;
+}
+
+export { a, arr, saySomething };                              
+
+//*import process                                               
+import { a, arr, saySomething as s } from "./main.js";         
+
+console.log(a);
+console.log(arr);
+console.log(s());
+*/
+
+//*export process 2
+/*
+let a = 10;
+let arr = [1, 2, 3, 4];
+
+function saySomething() {
+  return `Something`;
+}
+
+export { a as myNumber, arr, saySomething };
+
+export default function () {
+  return `Hello`;
+}
+
+//*import process 2
+
+import * as all from "./main.js";
+
+console.log(all);
+
+console.log(all.myNumber);
+console.log(all.arr);
+*/
+//! export and import________________________________________
+/*
+let days = ["sun","mon","thu","wed","thr","fri","sat"];
+console.log(dateNow.getTime()); // time in milliseconds from 1970 till now
+console.log(dateNow.getDate());  // day of the month 
+console.log(dateNow.getFullYear());
+console.log(dateNow.getMonth()); // return index..
+console.log(dateNow.getDay());  //day of the weeek return index .. first day is sun
+console.log(days[dateNow.getDay()]); 
+console.log(dateNow.getHours());
+console.log(dateNow.getMinutes());
+*/
+
+/*
+  Date And Time
+  - setTime(Milliseconds)
+  - setDate() => Day Of The Month [Negative And Positive]
+  - setFullYear(year, month => Optional [0-11], day => Optional [1-31])
+  - setMonth(Month [0-11], Day => Optional [1-31]) [Negative And Positive]
+  - setHours(Hours [0-23], Minutes => Optional [0-59], Seconds => Optional [0-59], MS => Optional [0-999])
+  - setMinutes(Minutes [0-59], Seconds => Optional [0-59], MS => Optional [0-999])
+  - setSeconds(Seconds => [0-59], MS => Optional [0-999])
+*/
+// - "Oct 25 1982"
+// - "10/25/1982"
+// - "1982-10-25" => ISO International Standard
+// - "1982 10"
+// - "1982"
+// - "82"
+// - 1982, 9, 25, 2, 10, 0
+// - 1982, 9, 25
+// - "1982-10-25T06:10:00Z"
+
+//! Assignment from 159 >>
+//todo: assign two
+/*
+let date = new Date();
+date.setFullYear(1980,0)
+date.setHours(0,0,10);
+console.log(date);
+*/
+//todo:assign three
+/*
+let date = new Date();
+let months = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+date.setDate(0);
+console.log(date);
+console.log(`previous month is ${months[date.getMonth()]} and last day is ${date.getDate()}`);
+*/
+//todo:assign four
+/*
+let birthday = new Date("1998-9-17");
+let birthday2 = new Date("9/17/1998");
+let birthday3 = new Date("sep 17,98");
+
+console.log(birthday);
+console.log(birthday2);
+console.log(birthday3);
+*/
+//todo:assign five
+/*
+let begin = performance.now();
+
+for(let i = 0;i<99999;i++){
+  console.log("hi");
+}
+let end = performance.now();
+
+
+console.log(end-begin);
+*/
+
+//todo:assign six
+/*
+function* generator(){
+  id = 14;
+  while(true){
+    yield id;
+    id = Math.trunc((id*2));
+  }
+}
+
+let generate = generator();
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+console.log(generate.next());
+*/
+
+//todo:assign seven
+/*
+function* genNumbers() {
+  yield* [1, 2, 2, 2, 3, 4, 5];
+}
+function* genLetters() {
+  yield* ["A", "B", "B", "B", "C", "D"];
+}
+
+function* generateAll(){
+
+  yield* new Set(genNumbers());
+  yield* new Set(genLetters());
+
+  //!other solution
+  //   let setNums = new Set();
+  // for (let x of genNumbers()) {
+  //   setNums.add(x);
+  // }
+  // let setLetters = new Set();
+  // for (let x of genLetters()) {
+  //   setLetters.add(x);
+  // }
+
+  // yield* setNums;
+  // yield* setLetters;
+}
+
+let generator = generateAll();
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+*/
+
+//! Json  javascript object notation
+//* see text.json file >>
+/*
+  JSON Syntax
+  - Data Added Inside Curly Braces {  }
+  - Data Added With Key : Value
+  - Key Should Be String Wrapped In Double Quotes
+  - Data Separated By Comma
+  - Square Brackets [] For Arrays
+  - Curly Braces {} For Objects
+
+  Available Data Types
+  - String
+  - Number
+  - Object
+  - Array
+  - Boolean Values
+  - null
+*/
+//todo: parse and stringfy
+/*
+const myJsonFromServer  = '{"name":"ali","age":23}';
+console.log(typeof myJsonFromServer);
+console.log(myJsonFromServer);
+
+//* convert json to js obj
+
+const myJsObj = JSON.parse(myJsonFromServer);
+console.log(typeof myJsObj);
+console.log(myJsObj);
+
+//* edit date 
+
+myJsObj["name"] = "ahmed";
+myJsObj["age"] = 40;
+
+//* convert js obj to json to send to server
+
+const myJsonToServer = JSON.stringify(myJsObj);
+console.log(typeof myJsonToServer);
+console.log(myJsonToServer);
+*/
+//todo: Asynchronous vs Synchronous programming
+/*
+  To Understand Ajax, Fetch, Promises
+
+  Asynchronous vs Synchronous Programming
+  - Meaning
+
+  Synchronous
+  - Operations Runs in Sequence
+  - Each Operation Must Wait For The Previous One To Complete
+
+  Asynchronous
+  - Operations Runs In Parallel
+  - This Means That An Operation Can Occur while Another One Is Still Being Processed
+
+  - Facebook As Example
+  - Simulation
+  
+  Search
+  - JavaScript Is A Single-Threaded
+  - Multi Threaded Languages
+*/
+/*
+//*synchronous
+console.log("1");
+console.log("2");
+window.alert("Operation");
+console.log("3");
+//* Asynchronous
+console.log("1");
+console.log("2");
+setTimeout(() => console.log("Operation"), 3000);
+console.log("3");
+*/
+/*
+setTimeout(() => {
+  console.log("Web API");
+}, 0);
+
+function one() {
+  console.log("One");
+}
+function two() {
+  one();
+  console.log("Two");
+}
+function three() {
+  two();
+  console.log("Three");
+}
+
+three();
+*/
+
+//todo: Event Loop + Callback Queue
+/*
+console.log("One");
+setTimeout(() => {
+  console.log("Three");
+}, 0);
+setTimeout(() => {
+  console.log("Four");
+}, 0);
+console.log("Two");
+
+setTimeout(() => {
+  console.log(myVar);
+}, 0);
+
+let myVar = 100;
+myVar += 100;
+*/
+
+/*
+  Ajax
+  - Ready State => Status Of The Request
+  [0] Request Not Initialized
+  [1] Server Connection Established
+  [2] Request Received
+  [3] Processing Request
+  [4] Request Is Finished And Response Is Ready
+  - Status
+  [200] Response Is Successful
+  [404] Not Found
+*/
+/*
+let myRequest = new XMLHttpRequest();
+
+myRequest.open("GET", "https://api.github.com/users/elzerowebschool/repos");
+myRequest.send();
+console.log(myRequest);
+
+myRequest.onreadystatechange = function () {
+  if (this.readyState === 4 && this.status === 200) {
+    // console.log(this.responseText);
+    let jsData = JSON.parse(this.responseText);
+    for(let i = 0;i<jsData.length;i++){
+      let div = document.createElement("div");
+      let repoName = document.createTextNode(jsData[i].full_name);
+      div.appendChild(repoName);
+      document.body.appendChild(div);
+    }
+  }
+};
+*/
+//! Json assignment 
+/*
+let Request = new XMLHttpRequest();
+
+Request.open("GET", "text.json");
+Request.send();
+console.log(Request);
+
+Request.onreadystatechange = function () {
+  if (this.readyState === 4 && this.status === 200) {
+    console.log("data is here");
+    let mainData = JSON.parse(this.responseText);
+    for (let i = 0; i < mainData.length; i++) {
+      mainData[i].category = "All";
+    }
+    let newData = JSON.stringify(mainData);
+    console.log(newData);
+    //main div
+    let div = document.createElement("div");
+    div.className = "date";
+    for (let i = 0; i < mainData.length; i++) {
+      // container
+      let child = document.createElement("div");
+      //id
+      let id = document.createElement("h2");
+      let idCon = document.createTextNode(mainData[i].id);
+      id.appendChild(idCon);
+      child.appendChild(id);
+      //writer
+      let writer = document.createElement("p");
+      let writerCon = document.createTextNode(mainData[i].writer);
+      writer.appendChild(writerCon);
+      child.appendChild(writer);
+      //category
+      let category = document.createElement("p");
+      let categoryCon = document.createTextNode(mainData[i].category);
+      category.appendChild(categoryCon);
+      child.appendChild(category);
+      //title
+      let title = document.createElement("p");
+      let titleCon = document.createTextNode(mainData[i].title);
+      title.appendChild(titleCon);
+      child.appendChild(title);
+      // appen container to main div
+      div.appendChild(child);
+    }
+    document.body.appendChild(div);
+    console.log(div);
+  }
+};
+*/
+
+//? do this firt before anything else .
+//todo:
+//*
+//todo>> hardware architecture
+//todo>> how memory works
+//todo>> see roadmaps website mandatory The Internet Explained
+//*
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+//!-------------- END -------------//
 /*
 
 
@@ -3996,3 +5128,4 @@ console.log(userOne.constructor === User); //true
 //! 1/ repeat the course and see practice playlist
 //! 2/jonas course
 //! 3/go to MDN documents....>>> important....>>>
+//! 4/roadmap website ....>>> important....>>>
