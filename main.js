@@ -5041,7 +5041,7 @@ myRequest.onreadystatechange = function () {
   }
 };
 */
-//! Json assignment 
+//! Json assignment
 /*
 let Request = new XMLHttpRequest();
 
@@ -5093,13 +5093,37 @@ Request.onreadystatechange = function () {
 };
 */
 
-//? do this firt before anything else .
-//todo:
-//*
-//todo>> hardware architecture
-//todo>> how memory works
-//todo>> see roadmaps website mandatory The Internet Explained
-//*
+//todo>> callback function
+/*
+let p = document.querySelector(".test");
+function changeColor() {
+  if(document.body.style.color == "black"){
+    document.body.style.color = "blue";
+  }else{
+    document.body.style.color = "black";
+  }
+}  
+p.addEventListener("click", changeColor);
+
+function callBack(){
+  console.log("call back function");
+}
+setTimeout(callBack, 500);
+
+setTimeout(()=> {
+  console.log("download photo");
+  setTimeout(()=> {
+    console.log("resize photo");
+    setTimeout(()=> {
+      console.log("add logo");
+      setTimeout(()=> {
+        console.log("show photo");
+      },1000)
+    },1000)
+  },1000)
+},1000)
+*/
+
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
 //!-------------- END -------------//
