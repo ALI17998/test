@@ -5124,6 +5124,77 @@ setTimeout(()=> {
 },1000)
 */
 
+//todo >> promise
+/*
+const myPromise = new Promise((resolveFunction, rejectFuction) => {
+  let connect = true;
+  if (connect) {
+    resolveFunction("connection established");
+  } else {
+    rejectFuction(Error("connection failed"));
+  }
+});
+
+console.log(myPromise);
+
+let resolver = (resolveValue) => console.log(`good ${resolveValue}`);
+let rejector = (rejectValue) => console.log(`bad ${rejectValue}`);
+
+myPromise.then(resolver, rejector);
+
+myPromise.then(
+  (resolveValue) => console.log(`good ${resolveValue}`),
+  (rejectValue) => console.log(`bad ${rejectValue}`)
+);
+myPromise.then(
+  (resolveValue) => console.log(`good ${resolveValue}`),
+  (rejectValue) => console.log(`bad ${rejectValue}`)
+);
+*/
+
+//* catch & finally
+/*
+const myPromise = new Promise((resolveFuction, rejectFunction) => {
+  let employees = ["ahmed", "mohamed", "sameh"];
+  if (employees.length === 4) {
+    resolveFuction(employees);
+  } else {
+    rejectFunction(Error("number of employees is not 4"));
+  }
+});
+
+myPromise
+  .then((resolveValue) => {
+    resolveValue.length = 2;
+    return resolveValue;
+  })
+  .then((resolveValue) => {
+    resolveValue.length = 1;
+    return resolveValue;
+  })
+  .then((resolveValue) => {
+    console.log(`the chossen is ${resolveValue}`);
+  })
+  .catch((rejectedValue) => console.log(rejectedValue))
+  .finally(console.log("the operation is done"));
+
+*/
+//todo>> promise and XHR 
+
+let myRequest = new XMLHttpRequest();
+myRequest.onreadystatechange = function(){
+  if(this.readyState === 4 && this.status === 200){
+    let jsData = JSON.parse(this.responseText);
+    for(let i=0; i<jsData.length;i++){
+      let div = document.createElement("div");
+      let repoName = document.createTextNode(jsData[i].name);
+      div.appendChild(repoName);
+      document.body.appendChild(div);
+    }
+  }
+}
+myRequest.open("GET","https://api.github.com/users/elzerowebschool/repos");
+myRequest.send();
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
 //!-------------- END -------------//
@@ -5153,4 +5224,3 @@ setTimeout(()=> {
 //! 2/jonas course
 //! 3/go to MDN documents....>>> important....>>>
 //! 4/roadmap website ....>>> important....>>>
-
